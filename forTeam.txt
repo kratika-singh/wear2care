@@ -1,0 +1,7 @@
+2.7.2024
+Kratika 
+ - installed express
+ - installed colors
+ - installed nodemon
+ - installed dotenv
+ - installed morgan
