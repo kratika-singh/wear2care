@@ -5,3 +5,10 @@ Kratika
  - installed nodemon
  - installed dotenv
  - installed morgan
+ - installed mongoose
+download mongodb compass in local system
+
+
+
+kratika
+X50aYyTHwX3nBXQz
