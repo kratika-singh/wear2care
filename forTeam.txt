@@ -7,7 +7,7 @@ Kratika
  - installed morgan
  - installed mongoose
 download mongodb compass in local system
-
+(npm i )
 
 
 kratika
