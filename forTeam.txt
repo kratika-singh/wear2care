@@ -10,6 +10,7 @@ download mongodb compass in local system
 
 
 we do 8 ques daily
+succesfully added myself
 (npm i )
 
 kratika
