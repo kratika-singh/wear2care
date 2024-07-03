@@ -8,8 +8,11 @@ Kratika
  - installed mongoose
  - installed bcrypt
 download mongodb compass in local system
-(npm i )
 
+
+we do 8 ques daily
+succesfully added myself
+(npm i )
 
 kratika
 X50aYyTHwX3nBXQz
