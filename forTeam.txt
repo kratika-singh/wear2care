@@ -8,7 +8,9 @@ Kratika
  - installed mongoose
 download mongodb compass in local system
 
+
 we do 8 ques daily
+(npm i )
 
 kratika
 X50aYyTHwX3nBXQz
