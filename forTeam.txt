@@ -6,6 +6,7 @@ Kratika
  - installed dotenv
  - installed morgan
  - installed mongoose
+ - installed bcrypt
 download mongodb compass in local system
 (npm i )
 

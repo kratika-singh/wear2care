@@ -25,7 +25,7 @@ const userSchema  = new mongoose.Schema({
     },
     role:{
         type:Number,
-        default:o
+        default:0
     }
 
 },{timestamps:true});
