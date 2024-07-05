@@ -8,6 +8,7 @@ Kratika
  - installed mongoose
  - installed bcrypt
  - installed jsonwebtoken
+ - installed react-router-dom
 download mongodb compass in local system
 
 
