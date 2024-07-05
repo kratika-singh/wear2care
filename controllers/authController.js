@@ -95,6 +95,12 @@ export const loginController=async(req,res)=>{
             success:false,
             message:'Error in Login',
             error
-        })
+        });
     }
+};
+
+//test Controller
+export const testController = (req,res)=>{
+    res.send("Protected Routes")
 }
+
