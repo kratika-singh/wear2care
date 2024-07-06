@@ -9,6 +9,7 @@ Kratika
  - installed bcrypt
  - installed jsonwebtoken
  - installed react-router-dom
+ - installed react-icons
 download mongodb compass in local system
 
 
