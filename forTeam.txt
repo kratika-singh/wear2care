@@ -10,6 +10,12 @@ Kratika
  - installed jsonwebtoken
  - installed react-router-dom
  - installed react-icons
+ - installed react-helmet(for SEO)
+ - installed react-toastify axios
+ - 
+
+
+ 
 download mongodb compass in local system
 
 
