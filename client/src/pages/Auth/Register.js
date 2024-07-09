@@ -17,7 +17,7 @@ const Register = () => {
     const handleSubmit =async (e)=>{
         e.preventDefault();
         try{
-            const res = await axios.post("/api/v1/auth/register",
+            const res = await axios.post('/api/v1/auth/register',
               {name,
                 email,
                 password,
@@ -48,7 +48,7 @@ const Register = () => {
       value={name}
       onChange={(e) => setName(e.target.value)} 
      className="form-control" 
-     id="exampleInputEmail1"
+     id="name1"
      placeholder='Enter your Name'
      required/>
     </div>
@@ -58,28 +58,28 @@ const Register = () => {
      value={email}
      onChange={(e) => setEmail(e.target.value)} 
      className="form-control" 
-     id="exampleInputEmail1"
+     id="email1"
      placeholder='Enter your Email'
      required/>
     </div>
 
     <div className="mb-3">
-    <input type="text"
+    <input type="password"
      value={password}
      onChange={(e) => setPassword(e.target.value)} 
      className="form-control" 
-     id="exampleInputEmail1"
+     id="password1"
      placeholder='Enter your Password'
      required/>
     </div>
 
 
     <div className="mb-3">
-    <input type="password" 
+    <input type="text" 
     value={phone}
     onChange={(e) => setPhone(e.target.value)} 
     className="form-control" 
-    id="exampleInputPassword1"
+    id="phone1"
     placeholder='Enter your Phone'
     required />
     </div>
@@ -89,7 +89,7 @@ const Register = () => {
      value={address}
      onChange={(e) => setAddress(e.target.value)} 
      className="form-control" 
-     id="exampleInputEmail1"
+     id="address1"
      placeholder='Enter your Address'
      required />
     </div>

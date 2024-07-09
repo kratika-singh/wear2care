@@ -11,8 +11,16 @@ Kratika
  - installed react-router-dom
  - installed react-icons
  - installed react-helmet(for SEO)
- - installed react-toastify axios
- - 
+ - installed react-toastify 
+ - installed axios
+
+9.7.2024
+Dishika
+ - installed concurrently(root)
+ - installed cors (root)
+Kratika
+ -
+
 
 
  
