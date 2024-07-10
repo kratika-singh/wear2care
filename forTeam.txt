@@ -15,13 +15,15 @@ Kratika
  - installed axios
 
 9.7.2024
-Dishika
+Dishika 
  - installed concurrently(root)
- - installed cors (root)
+ - installed cors(root)
+ - installed slugify(root) 10-7-2001
+
+ NOTE :export default mongoose.model("Catergory", categorySchema); iske ander "Catergory" ho gya h toh dekh lena , maine haar jgh copy kra tha toh dekha nhi ...toh isko ase hi rhene dena 
+
 Kratika
- -
-
-
+-
 
  
 download mongodb compass in local system
