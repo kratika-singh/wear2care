@@ -23,10 +23,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
-          <Route path="user" element={<Dashboard/>} />
-          <Route path="user/profile" element={<Profile/>} />
+          <Route path="user" element={<Dashboard />} />
+          <Route path="user/profile" element={<Profile />} />
           <Route path="user/orders" element={<Order />} />
-          <Route path="user/sell" element={<Sell/>} />
+          <Route path="user/sell" element={<Sell />} />
         </Route>
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
@@ -35,7 +35,7 @@ function App() {
           <Route path="admin/users" element={<Users />} />
         </Route>
         <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword/>} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

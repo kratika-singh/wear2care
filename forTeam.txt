@@ -19,6 +19,10 @@ Dishika
  - installed concurrently(root)
  - installed cors(root)
  - installed slugify(root) 10-7-2001
+11.7.2024
+Ishika 
+- installed antd(in client)
+
 
  NOTE :export default mongoose.model("Catergory", categorySchema); iske ander "Catergory" ho gya h toh dekh lena , maine haar jgh copy kra tha toh dekha nhi ...toh isko ase hi rhene dena 
 
