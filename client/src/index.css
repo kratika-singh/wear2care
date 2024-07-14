@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,23 +10,23 @@
 /* font-family: "Playfair Display", serif; */
 
 /*//Navbar css//*/
-.navbar{
+.navbar {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
   box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow:0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
   border-bottom: solid grey !important;
 }
 
-.nav-link{
+.nav-link {
   font-weight: 300px !important;
 }
-.active{
+.active {
   border-bottom: 2px solid black;
 }
-.navbar-brand{
+.navbar-brand {
   font-weight: 700;
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
@@ -34,23 +34,19 @@
 /*=====================================
 =========== Footer===================*/
 
-.footer{
+.footer {
   color: white;
   padding: 25px;
   background-color: #000000;
-  background: --webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  );
-  background: linear-gradient(to right, #434343,#000000);
+  background: --webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
 }
-.footer a{
+.footer a {
   text-decoration: none;
   color: white;
   padding: 10px;
 }
-.footer a:hover{
+.footer a:hover {
   color: #ffefba;
   border-bottom: 1px solid #ffefba;
 }
@@ -111,4 +107,8 @@
   color: white;
 }
 /*================================
-=========register =========*/
+======== Product - Link=========*/
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
+}
