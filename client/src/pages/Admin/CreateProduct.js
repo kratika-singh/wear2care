@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../../components/Layout/Layout";
-import AdminMenu from "../../components/Layout/AdminMenu";
+import Layout from "./../../components/Layout/Layout";
+import AdminMenu from "./../../components/Layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
@@ -10,16 +10,16 @@ const { Option } = Select;
 const CreateProduct = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-  const [name, setName] = useState(" ");
-  const [description, setDescription] = useState(" ");
-  const [price, setPrice] = useState(" ");
-  const [category, setCategory] = useState(" ");
-  const [quantity, setQuantity] = useState(" ");
-  const [shipping, setShipping] = useState(" ");
-  const [photo, setPhoto] = useState(null);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [shipping, setShipping] = useState("");
+  const [photo, setPhoto] = useState("");
 
   //get all category
-  const getAllcategory = async () => {
+  const getAllCategory = async () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");
       if (data?.success) {
@@ -27,12 +27,12 @@ const CreateProduct = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong in getting Category");
+      toast.error("Something wwent wrong in getting catgeory");
     }
   };
 
   useEffect(() => {
-    getAllcategory();
+    getAllCategory();
   }, []);
 
   //create product function
@@ -63,8 +63,8 @@ const CreateProduct = () => {
   };
 
   return (
-    <Layout title={"Dashboard - Create Products"}>
-      <div className="container-fluid m-3 p-3">
+    <Layout title={"Dashboard - Create Product"}>
+      <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
@@ -77,7 +77,7 @@ const CreateProduct = () => {
                 placeholder="Select a category"
                 size="large"
                 showSearch
-                className="form-select m-3"
+                className="form-select mb-3"
                 onChange={(value) => {
                   setCategory(value);
                 }}
@@ -130,6 +130,7 @@ const CreateProduct = () => {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
+
               <div className="mb-3">
                 <input
                   type="number"
