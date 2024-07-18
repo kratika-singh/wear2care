@@ -23,9 +23,8 @@ export const registerController = async (req, res) => {
       return res.send({ message: "Address is required" });
     }
     if (!answer) {
-        return res.send({ message: "Answer is required" });
+      return res.send({ message: "Answer is required" });
     }
-  
 
     // existing user check
     const existingUser = await userModel.findOne({ email });
@@ -43,7 +42,7 @@ export const registerController = async (req, res) => {
       phone,
       address,
       password: hashedPassword,
-      answer
+      answer,
     }).save();
     res.status(201).send({
       success: true,
@@ -163,5 +162,39 @@ export const testController = (req, res) => {
   } catch (error) {
     console.log(error);
     res.send({ error });
+  }
+};
+
+//update profile
+export const updateProfileController = async (req, res) => {
+  try {
+    const { name, email, password, address, phone } = req.body;
+    const user = await userModel.findById(res.user._id);
+    //password
+    if (password && password.length < 6) {
+      return res.json({ error: "Password is required and 6 character long" });
+    }
+    const hashedPassword = password ? await hashPassword(password) : undefined;
+    const updatedUser = await userModel.findByIdAndUpdate(
+      req.user._id,
+      {
+        name: name || user.name,
+        password: hashedPassword || user.password,
+        phone: phone || user.phone,
+        address: address || user.address,
+      },
+      { new: true }
+    );
+    res.status(200).send({
+      success: true,
+      message: "Profile Updated successfully",
+      updatedUser,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      message: "Error while updating profile",
+      error,
+    });
   }
 };
