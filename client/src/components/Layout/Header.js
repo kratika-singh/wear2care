@@ -1,4 +1,5 @@
 import React from "react";
+import "../../Styles/header.css";
 import { NavLink, Link } from "react-router-dom";
 import { TbShoppingBagSearch } from "react-icons/tb";
 import { useAuth } from "../../context/auth";
@@ -21,7 +22,7 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -35,9 +36,7 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to="/" className="navbar-brand">
-              <TbShoppingBagSearch /> Wear2Care
-            </Link>
+              <img src="../../../images/logo.png" className="logo"></img>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInput />
               <li className="nav-item">

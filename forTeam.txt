@@ -25,17 +25,13 @@ Ishika
 
 
  NOTE :export default mongoose.model("Catergory", categorySchema); iske ander "Catergory" ho gya h toh dekh lena , maine haar jgh copy kra tha toh dekha nhi ...toh isko ase hi rhene dena 
-
+20.07.2024
 Kratika
--
+- installed react-bootstrap
 
  
 download mongodb compass in local system
 
-
-we do 8 ques daily
-succesfully added myself
-(npm i )
 
 kratika
 X50aYyTHwX3nBXQz

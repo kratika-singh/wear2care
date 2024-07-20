@@ -9,23 +9,21 @@
 /* font-family: "Poppins", sans-serif; */
 /* font-family: "Playfair Display", serif; */
 
+:root{
+  --body-color : #EBF4F6;
+  --container-color : #ffffff;
+  --title-color : #37B7C3;
+  --title-color-dark: #088395;
+  --text-color:#555555;
+  --highlight-color : #071952;
+}
 /*//Navbar css//*/
-.navbar {
-  font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  line-height: 26px;
-  text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: solid grey !important;
+body{
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
-.nav-link {
-  font-weight: 300px !important;
-}
-.active {
-  border-bottom: 2px solid black;
-}
+
 .navbar-brand {
   font-weight: 700;
   font-family: "roboto", sans-serif;
