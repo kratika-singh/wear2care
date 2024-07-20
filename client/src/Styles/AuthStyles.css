@@ -5,14 +5,14 @@
     justify-content: center;
     min-height: 70hv;
     flex-direction: column;
-    background-color: #ffdee9;
-    background-image: linear-gradient(#ffdee9 0%, #b5fffc 100%);
+    margin-top: 30px;
 }
 
 .form-container form{
     box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
     padding: 20px;
     background-color: #fff;
+    border-radius: 5%;
 }
 
 .form-container form .title{
@@ -25,24 +25,19 @@
 .form-container form input{
     border: none;
     border-bottom: 1px solid #000;
-    border-radius: 0;;
+    border-radius: 0;
 }
 
 .form-container form button{
-    border: 1px solid black;
+    border: 1px solid var(--title-color);
     border-radius: 0;
-    background-color: #000;
+    background-color:var(--title-color);
     color: white;
     width: 250px;
 }
 
 .form-container form button:hover{
-    border: 1px solid black;
-    background: #000000;     /*fallback for old browser*/
-    background: -webkit-linear-gradient(
-        to right,
-        #434343,
-        #000000
-    );  /* W3C ,IE 10+ Edge , Firefo , Chrome 26+ , Opera 26+ ,Safari 7+*/
-
+    border: 1px solid var(--title-color-dark);
+    background-color: var(--title-color-dark);
+    color: #fff;
 }

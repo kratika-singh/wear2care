@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout.js";
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
+import CarouselHome from "../components/homeComponents/CarouselHome.js";
 const HomePage = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -103,6 +104,7 @@ const HomePage = () => {
   };
   return (
     <Layout title={"All Product - Best Offers"}>
+      <CarouselHome/>
       <div className="row mt-3">
         <div className="col-md-2">
           <h4 className="text-center">Filter By Category</h4>

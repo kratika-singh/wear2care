@@ -1,0 +1,34 @@
+.navbar{
+    background-color: var(--container-color);
+}
+.nav-link{
+    color: var(--title-color); 
+}
+.nav-link:hover{
+    color: var(--title-color-dark);
+}
+a.active{
+    color: var(--title-color-dark) !important;
+    border-bottom: 2px solid var(--title-color-dark);
+
+}
+.logo{
+    width: 90px;
+    height: 90px;
+}
+form{
+    padding-right: 30px;
+    color: var(--title-color) !important;
+}
+.input::placeholder {
+    color: var(--title-color);
+    opacity: 1; /* Firefox */
+  }
+  
+.btn-search{
+    border:1px solid var(--title-color);
+    color: var(--title-color);
+}
+input.input{
+    border: 1px solid var(--title-color) !important;
+}

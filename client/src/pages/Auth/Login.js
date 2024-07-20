@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <Layout title="Register- Wear2Care">
+    <Layout title="Login- Wear2Care">
       <div className="form-container">
         <h1>Login Form</h1>
         <form onSubmit={handleSubmit}>
@@ -67,10 +67,15 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          
+
+          <button type="submit" className="btn">
+            Login
+          </button>
+          <div className="mt-3">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn"
               onClick={() => {
                 navigate("/forgot-password");
               }}
@@ -78,10 +83,6 @@ const Login = () => {
               Forgot Password
             </button>
           </div>
-
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
         </form>
       </div>
     </Layout>
