@@ -5,6 +5,14 @@ import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
 import CarouselHome from "../components/homeComponents/CarouselHome.js";
+import Features from "../components/homeComponents/Features.js";
+
+import card1 from "../components/images/card1.png";
+import card2 from "../components/images/card2.jpg";
+import card3 from "../components/images/card3.jpg";
+
+import "../Styles/home.css"
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -104,8 +112,18 @@ const HomePage = () => {
   };
   return (
     <Layout title={"All Product - Best Offers"}>
-      <CarouselHome/>
+      <CarouselHome />
+      <section className="Feature-Container">
+        <h3> Our Features</h3>
+        <span>Why choose us?</span>
+        <div>
+          <Features imageUrl={card1} title={"Donate"} text={"Contribute to our partnered NGOs"}/>
+          <Features imageUrl={card2} title={"Sell"} text={"List your gently used clothes for sale and earn money"} />
+          <Features imageUrl={card3} title={"Buy"}  text={"Purchase high-quality second-hand clothes at affordable prices"}/>
+        </div>
+      </section>
       <div className="row mt-3">
+      <h1 className="text-center">All Products</h1>
         <div className="col-md-2">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
@@ -140,7 +158,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9">
-          <h1 className="text-center">All Products</h1>
+         
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
