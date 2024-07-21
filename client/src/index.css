@@ -17,6 +17,13 @@
   --text-color:#555555;
   --highlight-color : #071952;
 }
+.title{
+  margin: 25px;
+  color: var(--title-color);
+  text-align: center;
+  font-size: 45px;
+}
+
 /*//Navbar css//*/
 body{
   background-color: var(--body-color);
