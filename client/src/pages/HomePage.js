@@ -5,8 +5,6 @@ import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
 import CarouselHome from "../components/homeComponents/CarouselHome.js";
-import { useCart } from "../context/cart.js";
-import toast from "react-hot-toast";
 const HomePage = () => {
   const navigate = useNavigate();
   const [cart, setCart] = useCart();
@@ -143,35 +141,41 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-9">
-          <h1 className="text-center">All Products</h1>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex">
             {products?.map((p) => (
-              <div className="card m-2" style={{ width: "18rem" }}>
+              // <div className="product">
+              //   <div className="imgbox">
+              //     <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name}/>
+              //   </div>
+              //   <div className="details">
+              //     <h2>{p.name} <span>{p.description}</span></h2>
+              //     <div className="price"> Rs. {p.price}</div>
+              //   </div>
+              //   <label htmlFor="size">Size</label>
+              //   <span className="size" id="size">S</span>
+              // </div>
+
+              <div className="card m-2">
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
+                  className="card-img-top card_img"
                   alt={p.name}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description.substring(0, 30)}</p>
+                  <p className="card-text">{p.description.substring(0, 50)}</p>
                   <p className="card-text">$ {p.price}</p>
+                  <button href="#" class="btn">
+                    Buy Now
+                  </button>
                   <button
                     href="#"
-                    class="btn btn-primary ms-1"
+                    class="btn  ms-1"
                     onClick={() => navigate(`/product/${p.slug}`)}
                   >
                     More Details
                   </button>
-                  <button
-                    href="#"
-                    class="btn btn-secondary ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(cart, JSON.stringify([...cart, p]));
-                      toast.success("Item added");
-                    }}
-                  >
+                  <button href="#" class="btn btn-secondary ms-1">
                     ADD TO CART
                   </button>
                 </div>
