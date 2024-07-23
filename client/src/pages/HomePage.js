@@ -4,7 +4,16 @@ import Layout from "../components/Layout/Layout.js";
 import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
+import { useCart } from "../context/cart.js";
+import toast from "react-hot-toast";
 import CarouselHome from "../components/homeComponents/CarouselHome.js";
+import Features from "../components/homeComponents/Features.js";
+import card1 from "../components/images/card1.png";
+import card2 from "../components/images/card2.jpg";
+import card3 from "../components/images/card3.jpg";
+
+import "../Styles/home.css";
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [cart, setCart] = useCart();
@@ -106,7 +115,32 @@ const HomePage = () => {
   return (
     <Layout title={"All Product - Best Offers"}>
       <CarouselHome />
-      <div className="row mt-3">
+      <section className="Feature-Container">
+        <h1 className="title"> Our Features</h1>
+        <span>Why choose us?</span>
+        <div>
+          <Features
+            imageUrl={card1}
+            title={"Donate"}
+            text={"Contribute to our partnered NGOs"}
+          />
+          <Features
+            imageUrl={card2}
+            title={"Sell"}
+            text={"List your gently used clothes for sale and earn money"}
+          />
+          <Features
+            imageUrl={card3}
+            title={"Buy"}
+            text={
+              "Purchase high-quality second-hand clothes at affordable prices"
+            }
+          />
+        </div>
+      </section>
+      <div className="row mt-3 products">
+        <h1 className="text-center title">All Products</h1>
+        <span className="subtitle">Choose what You Like</span>
         <div className="col-md-2">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
@@ -143,18 +177,6 @@ const HomePage = () => {
         <div className="col-md-9">
           <div className="d-flex">
             {products?.map((p) => (
-              // <div className="product">
-              //   <div className="imgbox">
-              //     <img src={`/api/v1/product/product-photo/${p._id}`} alt={p.name}/>
-              //   </div>
-              //   <div className="details">
-              //     <h2>{p.name} <span>{p.description}</span></h2>
-              //     <div className="price"> Rs. {p.price}</div>
-              //   </div>
-              //   <label htmlFor="size">Size</label>
-              //   <span className="size" id="size">S</span>
-              // </div>
-
               <div className="card m-2">
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
@@ -175,7 +197,15 @@ const HomePage = () => {
                   >
                     More Details
                   </button>
-                  <button href="#" class="btn btn-secondary ms-1">
+                  <button
+                    href="#"
+                    class="btn btn-secondary ms-1"
+                    onClick={() => {
+                      setCart([...cart, p]);
+                      localStorage.setItem(cart, JSON.stringify([...cart, p]));
+                      toast.success("Item added");
+                    }}
+                  >
                     ADD TO CART
                   </button>
                 </div>
