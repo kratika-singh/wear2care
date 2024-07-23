@@ -5,8 +5,11 @@ import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
 import CarouselHome from "../components/homeComponents/CarouselHome.js";
+import { useCart } from "../context/cart.js";
+import toast from "react-hot-toast";
 const HomePage = () => {
   const navigate = useNavigate();
+  const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -104,7 +107,7 @@ const HomePage = () => {
   };
   return (
     <Layout title={"All Product - Best Offers"}>
-      <CarouselHome/>
+      <CarouselHome />
       <div className="row mt-3">
         <div className="col-md-2">
           <h4 className="text-center">Filter By Category</h4>
@@ -160,7 +163,15 @@ const HomePage = () => {
                   >
                     More Details
                   </button>
-                  <button href="#" class="btn btn-secondary ms-1">
+                  <button
+                    href="#"
+                    class="btn btn-secondary ms-1"
+                    onClick={() => {
+                      setCart([...cart, p]);
+                      localStorage.setItem(cart, JSON.stringify([...cart, p]));
+                      toast.success("Item added");
+                    }}
+                  >
                     ADD TO CART
                   </button>
                 </div>
