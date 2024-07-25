@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.img-container{
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: var(--container-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg,
+    rgba(0, 70, 66, 0.75),
+    rgba(0, 0, 0, 0.1)), url("../components/images/about.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 380px;
+}
+.mission{
+    text-align: center;
+}
+.mission h1,.impact h1,.story h1{
+    margin: 25px;
+    color:black;
+    font-size: 45px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.mission h1::after,.impact h1::after,.story h1::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -15px;
+    width: 100px;
+    height: 10px; 
+    border-radius: 20px;
+    background-color: var(--title-color); 
+}
+.mission h2{
+    margin: 25px auto;
+    width: 550px;
+    color: var(--title-color-dark);
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    font-size: 45px;
+}
+.quote{
+    padding: 30px 300px;
+    font-size: larger;
+    background-color: var(--title-color);
+    color: var(--container-color);
+}
+.impact{
+    text-align: center;
+}
+.container1{
+    display: flex;
+    margin: 0 100px;
+}
+.container1 div{
+    margin: 30px;
+    background-color: var(--container-color);
+    border-radius: 4px;
+    width: 40vh;
+    padding: 40px 0;
+}
+.icon{
+    display: block;
+    color: var(--title-color);
+    font-size: 5vh;
+    padding-bottom: 10px;
+}
+.container1 div:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.story{
+    text-align: center;
+}
+.container-story{
+    display: flex;
+    margin: 2rem 8rem;
+}
+.container-story div{
+    width: 50%;
+}
+.container-story img{
+    width:50vh;
+    border-radius: 15px;
+    margin: 0 1rem;
+}
+.container-story p{
+    color: var(--text-color);
+    padding:  0 3rem;
+    text-align: justify;
+}
+.banner{
+    text-align: center;
+}
