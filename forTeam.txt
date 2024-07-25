@@ -29,6 +29,10 @@ Ishika
 Kratika
 - installed react-bootstrap
 
+25.07.2024
+-installed npm i braintree(root)
+-installed npm i braintree-web-drop-in-react(client)
+
  
 download mongodb compass in local system
 
