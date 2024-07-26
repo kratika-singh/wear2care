@@ -28,7 +28,9 @@ Ishika
 20.07.2024
 Kratika
 - installed react-bootstrap
+25.07.2024
 - installed typewriter-effect
+- installed --save @emailjs/browser
 
 25.07.2024
 -installed npm i braintree(root)
