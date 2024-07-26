@@ -62,7 +62,9 @@
     background-color: var(--container-color);
     border-radius: 4px;
     width: 40vh;
-    padding: 40px 0;
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 40px;
 }
 .icon{
     display: block;
