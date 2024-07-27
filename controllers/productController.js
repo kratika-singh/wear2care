@@ -19,7 +19,7 @@ var gateway = new braintree.BraintreeGateway({
 
 export const createProductController = async (req, res) => {
   try {
-    const { name, description, price, category, quantity, shipping } =
+    const { condition,name,brand, description, price,size, category,  donation } =
       req.fields;
     const { photo } = req.files;
     //alidation
@@ -32,8 +32,14 @@ export const createProductController = async (req, res) => {
         return res.status(500).send({ error: "Price is Required" });
       case !category:
         return res.status(500).send({ error: "Category is Required" });
-      case !quantity:
-        return res.status(500).send({ error: "Quantity is Required" });
+        case !condition:
+          return res.status(500).send({ error: "Condition is Required" });
+      case !size:
+        return res.status(500).send({ error: "Size is Required" });
+      case !brand:
+        return res.status(500).send({ error: "Brand is Required" });
+      case !donation:
+          return res.status(500).send({ error: "Donation Field is Required" });
       case photo && photo.size > 1000000:
         return res
           .status(500)

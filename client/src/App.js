@@ -24,6 +24,8 @@ import ProductDetails from "./pages/ProductDetails";
 import Categories from "./pages/Categories";
 import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
+import ProductsSold from "./pages/user/ProductsSold";
+import UpdateProductUser from "./pages/user/UpdateProductUser";
 
 function App() {
   return (
@@ -39,7 +41,11 @@ function App() {
           <Route path="user" element={<Dashboard />} />
           <Route path="user/profile" element={<Profile />} />
           <Route path="user/orders" element={<Order />} />
+          <Route path="user/products-sold" element={<ProductsSold />} />
+          <Route path="user/product-sold/:slug" element={<UpdateProductUser />} />
           <Route path="user/sell" element={<Sell />} />
+          
+
         </Route>
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
