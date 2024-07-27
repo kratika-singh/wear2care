@@ -6,6 +6,7 @@ import ishika from "../components/images/ishika.jpg";
 import dishika from "../components/images/dishika.jpg";
 import sustaible from "../components/images/sustainable.png";
 import "../Styles/contact.css";
+
 const Contact = () => {
   const form = useRef();
 
@@ -29,22 +30,19 @@ const Contact = () => {
               <div className="name">Kratika</div>
               <div className="design">MCA Student</div>
               <div className="about">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Impedit cumque placeat vero. Ducimus odit eum quam similique
-                veritatis nostrum, illo blanditiis qui quaerat deserunt at animi
-                ipsum ab corrupti quos!
+              I'm a web developer who is passionate about applying technology to advance environmental and humanitarian causes. With the intention of improving both society and the environment, I concentrate on making work that is socially and sustainably significant.              
               </div>
               <div className="social-links">
-                <a href="#">
+                <a href="https://www.instagram.com/_kratikaaa__">
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/kratika-singh-/">
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="#">
+                <a href="mailto:kratika3770@gmail.com">
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="#">
+                <a href="https://github.com/kratika-singh">
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -87,22 +85,19 @@ const Contact = () => {
               <div className="design">MCA Student</div>
               <div className="about">
                 {" "}
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Impedit cumque placeat vero. Ducimus odit eum quam similique
-                veritatis nostrum, illo blanditiis qui quaerat deserunt at animi
-                ipsum ab corrupti quos!
-              </div>
+                
+I'm a tech enthusiast committed to sustainable development and environmental stewardship. I use technology to create innovative solutions that benefit people and the planet, combining my technical skills with a passion for nature to promote a healthier, more sustainable world.              </div>
               <div className="social-links">
-                <a href="#">
+                <a href="https://www.instagram.com/_dishika.ruhela_">
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="#">
+                <a href="www.linkedin.com/in/dishika-ruhela-09">
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="#">
+                <a href="mailto:druhela09@gmail.com">
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="#">
+                <a href="https://github.com/dishika-ruhela">
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -117,8 +112,19 @@ const Contact = () => {
           </div>
           <div>
             <h2>What is Sustaible Fashion?</h2>
-            <p>Sustainable fashion promotes environmentally friendly, ethically produced, and socially responsible clothing and accessories. It emphasizes the use of organic, recycled, and renewable materials, and advocates for fair wages and safe working conditions for workers. This movement contrasts with fast fashion by encouraging mindful consumption and prioritizing quality over quantity. Sustainable fashion also includes circular practices like recycling and upcycling, aiming to reduce waste and resource consumption. As awareness grows, both consumers and brands are increasingly embracing sustainable practices to address environmental and social issues.
-</p>
+            <p>
+              Sustainable fashion promotes environmentally friendly, ethically
+              produced, and socially responsible clothing and accessories. It
+              emphasizes the use of organic, recycled, and renewable materials,
+              and advocates for fair wages and safe working conditions for
+              workers. This movement contrasts with fast fashion by encouraging
+              mindful consumption and prioritizing quality over quantity.
+              Sustainable fashion also includes circular practices like
+              recycling and upcycling, aiming to reduce waste and resource
+              consumption. As awareness grows, both consumers and brands are
+              increasingly embracing sustainable practices to address
+              environmental and social issues.
+            </p>
           </div>
         </div>
       </section>
@@ -197,22 +203,22 @@ const Contact = () => {
             <form>
               <h2>Send Message</h2>
               <div className="input-box">
-               <input type="text" name="" required="required" />
-               <span>Full Name</span>
+                <input type="text" name="" required="required" />
+                <span>Full Name</span>
               </div>
 
               <div className="input-box">
-               <input type="text" name="" required="required" />
-               <span>Email</span>
+                <input type="text" name="" required="required" />
+                <span>Email</span>
               </div>
 
               <div className="input-box">
-               <textarea required="required"></textarea>
-               <span>Type your message</span>
+                <textarea required="required"></textarea>
+                <span>Type your message</span>
               </div>
 
               <div className="input-box">
-              <input type="submit" value="Send"/>
+                <input type="submit" value="Send" />
               </div>
             </form>
           </div>

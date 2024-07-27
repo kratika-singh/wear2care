@@ -27,7 +27,7 @@ form{
   
 .btn-search{
     border:1px solid var(--title-color);
-    color: var(--title-color);
+    color: var(--title-color)!important;
 }
 input.input{
     border: 1px solid var(--title-color) !important;

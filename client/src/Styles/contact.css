@@ -44,11 +44,15 @@
 .teams{
     margin: 30px;
     padding: 22px;
+    width: 30%;
     cursor: pointer;
     transition: 0.4s;
     box-sizing: border-box;
     background-color: var(--container-color);
     border-radius: 10px;
+}
+.teams .about{
+    text-align: justify;
 }
 .teams:hover{
     cursor: pointer;
@@ -309,6 +313,9 @@ button {
     .container-contact{
         flex-direction: column;
         margin-bottom: 40px;
+    }
+    .teams{
+        width: 100%;
     }
     .contact-info,.contact-form{
         width: 100%;
