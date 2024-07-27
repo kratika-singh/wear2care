@@ -12,8 +12,8 @@ const UserMenu = () => {
         <NavLink to="/dashboard/user/orders" className="list-group-item list-group-item-action">
           Orders
         </NavLink>
-        <NavLink to="/dashboard/user/sell" className="list-group-item list-group-item-action">
-         Sell
+        <NavLink to="/dashboard/user/products-sold" className="list-group-item list-group-item-action">
+         Products
         </NavLink>
         
       </div>

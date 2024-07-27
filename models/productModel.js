@@ -19,14 +19,21 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    size: {
+      type: String,
+      required: true,
+    },
+    brand: {
+      type: String,
+      required: true,
+    },
     category: {
       type: mongoose.ObjectId,
       ref: "Catergory",
       required: true,
     },
-
-    quantity: {
-      type: Number,
+    condition: {
+      type: String,
       required: true,
     },
     photo: {
@@ -34,9 +41,14 @@ const productSchema = new mongoose.Schema(
       contentType: String,
     },
 
-    shipping: {
+    donation: {
       type: Boolean,
+      required: true,
     },
+    userId: {
+      type: String,
+      required: true,
+    }
   },
   { timestamps: true }
 );

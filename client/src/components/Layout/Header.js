@@ -47,7 +47,17 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item">
+                <NavLink to="/about" className="nav-link ">
+                  About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/contact" className="nav-link ">
+                  Contact
+                </NavLink>
+              </li>
+              {/* <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
                   to={"/categories"}
@@ -72,7 +82,7 @@ const Header = () => {
                     </li>
                   ))}
                 </ul>
-              </li>
+              </li> */}
               {!auth.user ? (
                 <>
                   <li className="nav-item">
@@ -88,6 +98,15 @@ const Header = () => {
                 </>
               ) : (
                 <>
+                  {auth?.user?.role === 0 && (
+                    <li className="nav-item">
+                      <NavLink to="/dashboard/user/sell" className="nav-link ">
+                        Sell
+                      </NavLink>
+                    </li>
+                  )}
+
+                  
                   <li className="nav-item dropdown">
                     <NavLink
                       className="nav-link dropdown-toggle"
@@ -109,18 +128,8 @@ const Header = () => {
                           Dashboard
                         </NavLink>
                       </li>
-                      <li>
-                        <NavLink
-                          onClick={handleLogout}
-                          to="/login"
-                          className="dropdown-item"
-                        >
-                          Logout
-                        </NavLink>
-                      </li>
                     </ul>
                   </li>
-
                   <li className="nav-item">
                     <NavLink
                       onClick={handleLogout}
@@ -136,7 +145,7 @@ const Header = () => {
               <li className="nav-item">
                 <Badge count={cart?.length} showZero>
                   <NavLink to="/cart" className="nav-link">
-                    Orders
+                    <i class="fa-solid fa-bag-shopping"></i>
                   </NavLink>
                 </Badge>
               </li>
