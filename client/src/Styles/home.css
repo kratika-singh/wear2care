@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .carousel-image-container {
   position: relative;
   display: inline-block;
@@ -48,16 +49,59 @@
 
 .Feature-Container div {
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
-
-
+.container-genz{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-genz p{
+  font-size: 19px;
+  text-align: center;
+}
+.container-genz span{
+  display: block;
+  margin: 20px 0;
+}
+.container-genz span:hover{
+  color: var(--title-color);
+}
+.container-genz .highlight{
+  color: var(--title-color);
+  font-family: "Dancing Script", cursive;
+}
+.all-product{
+  display: flex;
+}
+.all-product .container-cat-fil{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: var(--title-color);
+  width: 400px!important;
+  color: var(--container-color);
+  padding: 10px;
+}
+.container-cat-fil button{
+  color: var(--title-color)!important;
+  background-color: var(--container-color);
+  margin: 10px;
+}
 .products .subtitle {
   display: inline-block;
   text-align: center;
   display: block;
   margin-bottom: 1rem;
+}
+.products{
+  padding: 0 50px;
+}
+.card {
+  width: 300px!important;
 }
 
 .card_img {
@@ -72,8 +116,33 @@
   background-color: var(--title-color);
   color: var(--container-color);
 }
+@media (max-width:1256px) {
+  .all-product{
+    flex-direction: column;
 
+  }
+  .all-product .container-cat-fil{
+    flex-direction: row;
 
+  }
+  .container-cat-fil div{
+    width: 100%;
+  }
+}
+@media (max-width:1000px) {
+  .Feature-Container div{
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .all-product .container-cat-fil{
+    flex-direction: column;
+  }
+  .products .row{
+    align-items: center;
+  }
+}
 /* product-details */
 
 

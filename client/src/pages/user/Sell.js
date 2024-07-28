@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "./../../components/Layout/Layout";
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/auth";
+import "../../Styles/sell.css"
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
@@ -73,8 +74,7 @@ const Sell = () => {
 
   return (
     <Layout title={"Dashboard - Sell Product"}>
-      <div className="container-fluid m-3 p-3">
-        <div className="row">
+      <div className="sell-container">
           <div className="col-md-9">
             <h1>Sell Product</h1>
             <div className="m-1 w-75">
@@ -186,7 +186,7 @@ const Sell = () => {
               <div className="mb-3">
                 <Select
                   bordered={false}
-                  placeholder="Do You wanna Donate to NGO?"
+                  placeholder="Do You wanna Donate this item to NGO?"
                   size="large"
                   showSearch
                   className="form-select mb-3"
@@ -197,13 +197,12 @@ const Sell = () => {
                 </Select>
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleCreate}>
+                <button onClick={handleCreate}>
                   Upload
                 </button>
               </div>
+              </div>
             </div>
-          </div>
-        </div>
       </div>
     </Layout>
   );

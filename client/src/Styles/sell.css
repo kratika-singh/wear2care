@@ -1,0 +1,63 @@
+.sell-container{
+    display: flex;
+    justify-content: center;
+}
+.sell-container h1{
+    margin: 25px;
+    color:black;
+    font-size: 45px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.sell-container h1::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -15px;
+    width: 100px;
+    height: 10px; 
+    border-radius: 20px;
+    background-color: var(--title-color); 
+
+}
+
+.list-group h4{
+    margin: 25px;
+    color:var(--title-color);
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.list-group a.active{
+    background-color: var(--title-color);
+    color: var(--container-color)!important;
+}
+.list-p{
+    align-items: center;
+}
+.card{
+    width: 300px!important;
+}
+.card img{
+    height: 250px;
+  }
+
+h1{
+    margin: 25px;
+    color:black;
+    font-size: 45px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+h1::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -15px;
+    width: 100px;
+    height: 10px; 
+    border-radius: 20px;
+    background-color: var(--title-color); 
+}

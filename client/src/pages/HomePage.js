@@ -5,17 +5,20 @@ import axios from "axios";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices.js";
 import { useCart } from "../context/cart.js";
+import { useAuth } from "../context/auth.js";
 import toast from "react-hot-toast";
 import CarouselHome from "../components/homeComponents/CarouselHome.js";
 import Features from "../components/homeComponents/Features.js";
 import card1 from "../components/images/card1.png";
 import card2 from "../components/images/card2.jpg";
 import card3 from "../components/images/card3.jpg";
+import genz from "../components/images/genz.png";
 
 import "../Styles/home.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const [auth] = useAuth();
   const [cart, setCart] = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -116,7 +119,7 @@ const HomePage = () => {
     <Layout title={"All Product - Best Offers"}>
       <CarouselHome />
       <section className="Feature-Container">
-        <h1 className="title"> Our Features</h1>
+        <h1 className="text-center"> Our Features</h1>
         <span>Why choose us?</span>
         <div>
           <Features
@@ -138,76 +141,110 @@ const HomePage = () => {
           />
         </div>
       </section>
-      <div className="row mt-3 products">
-        <h1 className="text-center title">All Products</h1>
-        <span className="subtitle">Choose what You Like</span>
-        <div className="col-md-2">
-          <h4 className="text-center">Filter By Category</h4>
-          <div className="d-flex flex-column">
-            {categories?.map((c) => (
-              <Checkbox
-                key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)}
-              >
-                {c.name}
-              </Checkbox>
-            ))}
+      <section>
+        <div className="container-sus">
+          <div>
+            <img src={genz}></img>
           </div>
-
-          {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
-          <div className="d-flex flex-column">
-            <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {Prices?.map((p) => (
-                <div key={p._id}>
-                  <Radio value={p.array}>{p.name}</Radio>
-                </div>
-              ))}
-            </Radio.Group>
-          </div>
-          <div className="d-flex flex-column">
-            <button
-              className="btn btn-danger"
-              onClick={() => window.location.reload()}
-            >
-              RESET FILTERS
-            </button>
+          <div className="container-genz">
+            <h1 className="highlight">The Consumer Gap</h1>
+            <p>
+              Gen Z is always on the lookout for unique finds. Makers make them
+              - but don't have a single platform to sell them on.
+              <span>Until now.</span>
+            </p>
+              {!auth.user ? (
+                <>
+                  <button onClick={() => navigate("/login")}>Sell Now</button>
+                </>
+              ) : (
+                <>
+                  <button onClick={() => navigate("/dashboard/user/sell")}>
+                    Sell Now
+                  </button>
+                </>
+              )}
+            
           </div>
         </div>
-        <div className="col-md-9">
-          <div className="d-flex">
+      </section>
+      <div className="all-product">
+        <div class="container-cat-fil">
+          <div>
+            <h4 className="text-center">Filter By Category</h4>
+            <div className="d-flex flex-column">
+              {categories?.map((c) => (
+                <Checkbox
+                  key={c._id}
+                  onChange={(e) => handleFilter(e.target.checked, c._id)}
+                >
+                  {c.name}
+                </Checkbox>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="text-center">Filter By Price</h4>
+            <div className="d-flex flex-column">
+              <Radio.Group onChange={(e) => setRadio(e.target.value)}>
+                {Prices?.map((p) => (
+                  <div key={p._id}>
+                    <Radio value={p.array}>{p.name}</Radio>
+                  </div>
+                ))}
+              </Radio.Group>
+            </div>
+            <div className="d-flex flex-column">
+              <button onClick={() => window.location.reload()}>
+                RESET FILTERS
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="products">
+          <h1 className="text-center">All Products</h1>
+          <span className="subtitle">Choose what You Like</span>
+          <div className="row">
             {products?.map((p) => (
-              <div className="card m-2">
-                <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top card_img"
-                  alt={p.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description.substring(0, 50)}</p>
-                  <p className="card-text">Rs. {p.price}</p>
-                  <button href="#" class="btn  btn-secondary">
-                    Buy Now
-                  </button>
-                  <button
-                    href="#"
-                    class="btn  btn-secondary ms-1"
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                  >
-                    More Details
-                  </button>
-                  <button
-                    href="#"
-                    class="btn btn-secondary ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(cart, JSON.stringify([...cart, p]));
-                      toast.success("Item added");
-                    }}
-                  >
-                    ADD TO CART
-                  </button>
+              <div key={p._id} className="col-md-4 col-sm-6 mb-4">
+                <div className="card h-100">
+                  <img
+                    src={`/api/v1/product/product-photo/${p._id}`}
+                    className="card-img-top card_img"
+                    alt={p.name}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{p.name}</h5>
+                    <p className="card-text">
+                      {p.description.substring(0, 30)}
+                    </p>
+                    <p className="card-text">Rs. {p.price}</p>
+                    <button
+                      href="#"
+                      class="btn  btn-secondary ms-1"
+                      onClick={() => navigate(`/product/${p.slug}`)}
+                    >
+                      More Details
+                    </button>
+                    {auth.user && (
+                      <>
+                        <button
+                          href="#"
+                          class="btn btn-secondary ms-1"
+                          onClick={() => {
+                            setCart([...cart, p]);
+                            localStorage.setItem(
+                              cart,
+                              JSON.stringify([...cart, p])
+                            );
+                            toast.success("Item added");
+                          }}
+                        >
+                          ADD TO CART
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -215,7 +252,6 @@ const HomePage = () => {
           <div className="m-2 p-3">
             {products && products.length < total && (
               <button
-                className="btn btn-warning"
                 onClick={(e) => {
                   e.preventDefault();
                   setPage(page + 1);
