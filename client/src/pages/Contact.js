@@ -107,7 +107,6 @@ const Contact = () => {
                 technology.
               </div>
               <div className="social-links">
-<<<<<<< HEAD
                 <a href="https://www.instagram.com/ishika_casley">
                   <i className="fa-brands fa-instagram" />
                 </a>
@@ -118,18 +117,6 @@ const Contact = () => {
                   <i className="fa-solid fa-envelope" />
                 </a>
                 <a href="https://github.com/Ishikacasley14">
-=======
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-instagram" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-linkedin" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-solid fa-envelope" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
->>>>>>> df4f73d9645d71ac4ff6c3357b31b8e282fff032
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -147,11 +134,7 @@ const Contact = () => {
                 environmental stewardship. I use technology to create innovative
                 solutions that benefit people and the planet, combining my
                 technical skills with a passion for nature to promote a
-<<<<<<< HEAD
                 healthier, more sustainable world.{" "}
-=======
-                healthier, more sustainable world,
->>>>>>> df4f73d9645d71ac4ff6c3357b31b8e282fff032
               </div>
               <div className="social-links">
                 <a
@@ -274,7 +257,6 @@ const Contact = () => {
                 </a>
               </li>
               <li>
-
                 <a href="https://www.linkedin.com/company/wear2care">
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
