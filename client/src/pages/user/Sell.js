@@ -21,7 +21,6 @@ const Sell = () => {
   const [donation, setDonation] = useState("");
   const [photo, setPhoto] = useState("");
 
-  // Get all categories
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get("/api/v1/category/get-category");
@@ -38,7 +37,6 @@ const Sell = () => {
     getAllCategories();
   }, []);
 
-  // Create product function
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
@@ -52,7 +50,7 @@ const Sell = () => {
       productData.append("category", category);
       productData.append("donation", donation);
       productData.append("brand", brand);
-      productData.append("userId",auth?.user?.email)
+      productData.append("userId", auth?.user?.email);
 
       const { data } = await axios.post(
         "/api/v1/product/create-product",
@@ -124,19 +122,10 @@ const Sell = () => {
                 className="form-select mb-3"
                 onChange={(value) => setCondition(value)}
               >
-                  <Option value="New With Tag">
-                    New With Tag
-                  </Option>
-                  <Option value="Like New">
-                    Like New
-                  </Option>
-                  <Option value="Good">
-                    Good
-                  </Option>
-                  <Option value="Used">
-                   Used
-                  </Option>
-
+                <Option value="New With Tag">New With Tag</Option>
+                <Option value="Like New">Like New</Option>
+                <Option value="Good">Good</Option>
+                <Option value="Used">Used</Option>
               </Select>
               <div className="mb-3">
                 <input

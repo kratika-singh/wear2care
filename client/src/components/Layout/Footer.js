@@ -1,17 +1,113 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import useCategory from "../hooks/useCategory";
 
 const Footer = () => {
-  return (
-    <div className='footer'>
-      <h4 className='text-center'>All Right Reserved &copy; wear2care</h4>
-    <p className='text-center mt-3'>
-      <Link to="/about">About</Link>|
-      <Link to="/contact">Contact</Link>|
-      <Link to="/ploicy">Privacy Policy</Link>
-    </p>
-    </div>
-  )
-}
+  const categories = useCategory();
 
-export default Footer
+  // Limit to top 5 categories
+  const topCategories = categories?.slice(0, 5);
+
+  return (
+    <div className="footer">
+      <div className="footer-section">
+        <div className="sci1">
+          <Link to="/about">
+            <h2>About us</h2>
+          </Link>
+
+          <img src="../../../images/logo.png" alt="Logo" className="logo" />
+        </div>
+        <div className="sci2">
+          <h2>Follow Us</h2>
+          <ul className="social-links">
+            <li>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-facebook"></i>
+                <span className="social-text">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-x-twitter"></i>
+                <span className="social-text">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-youtube"></i>
+                <span className="social-text">YouTube</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-instagram"></i>
+                <span className="social-text">Instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="sci4">
+          <h2>Shop Us</h2>
+          <ul className="category-links">
+            <li>
+              <Link to="/categories">All Categories</Link>
+            </li>
+            {topCategories?.map((c) => (
+              <li key={c.id}>
+                <Link to={`/category/${c.slug}`}>{c.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="sci5">
+          <Link to="/contact">
+            <h2>Contact Us</h2>
+          </Link>
+
+          <ul>
+            <li>
+              <span>
+                <i className="fa-solid fa-phone"></i>
+              </span>
+              <p>
+                <a href="#">+91-42424242</a>
+              </p>
+            </li>
+            <li>
+              <span>
+                <i className="fa-solid fa-envelope"></i>
+              </span>
+              <p>
+                <a href="mailto:wear2care91430@gmail.com">
+                  wear2care91430@gmail.com
+                </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="copyrightText">
+        <p>CopyRight 2024 Wear2care. All rights Reserved.</p>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

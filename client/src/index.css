@@ -38,22 +38,194 @@ body{
 }
 /*=====================================
 =========== Footer===================*/
+/* Resetting default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
+/* Footer container styling */
 .footer {
   color: var(--title-color);
-  padding: 25px;
+  padding: 10px;
   background-color: var(--container-color);
 }
+
+/* Links in the footer */
 .footer a {
   text-decoration: none;
   color: var(--title-color);
-  padding: 25px;
-  padding: 10px;
+  padding: 5px 0;
+  font-size: 14px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
+
 .footer a:hover {
   color: var(--title-color-dark);
   border-bottom: 1px solid var(--title-color-dark);
 }
+
+/* Footer section styling */
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-section > div {
+  margin-bottom: 15px; /* Reduced margin */
+  flex: 1 1 200px; /* Adjusted flex basis */
+}
+
+/* Styling for individual sections */
+.sci1, .sci2, .sci4, .sci5 {
+  flex: 1;
+  margin: 10px;
+}
+
+/* Styling for the logo */
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Styling for Follow Us section */
+.sci2 ul {
+  list-style: none; /* Removes default bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+.sci2 li {
+  margin-bottom: 10px; /* Adds space between list items */
+  display: flex; /* Aligns icon and text horizontally */
+  align-items: center; /* Centers items vertically */
+}
+
+.sci2 li a {
+  color: var(--title-color); /* Sets color for icons and text */
+  text-decoration: none; /* Removes underline from links */
+  display: flex; /* Aligns items horizontally */
+  align-items: center; /* Centers items vertically */
+  font-size: 24px; /* Adjusts size of social media icons */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sci2 li a:hover {
+  color: var(--title-color-dark); /* Changes color on hover */
+}
+
+.social-text {
+  margin-left: 10px; /* Space between icon and text */
+  font-size: 16px; /* Adjusts size of social media text */
+}
+
+/* Dropdown section styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Contact Us section */
+.sci5 ul {
+  list-style: none;
+}
+
+.sci5 li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sci5 li span {
+  margin-right: 10px;
+}
+
+.sci5 li p {
+  margin: 0;
+}
+
+.sci5 li a {
+  color: var(--title-color);
+  text-decoration: none;
+}
+
+.sci5 li a:hover {
+  color: var(--title-color-dark);
+}
+/* Styling for category links similar to social media */
+.category-links {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.category-links li {
+  margin-bottom: 10px; /* Add space between items */
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+.category-links a {
+  color: var(--title-color); /* Set text color */
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Center items vertically */
+  font-size: 16px; /* Adjust font size */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.category-links a:hover {
+  color: var(--title-color-dark); /* Color change on hover */
+}
+
+.social-text {
+  margin-left: 10px; /* Space between icon and text */
+  font-size: 16px; /* Adjust font size */
+}
+
+/* Copyright text styling */
+.copyrightText {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--footer-background-color);
+  color: var(--title-color);
+}
+
 /* =================================
 ======== page not found css ======= */
 .pnf {
