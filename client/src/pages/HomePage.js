@@ -120,7 +120,11 @@ const HomePage = () => {
       <CarouselHome />
       <section className="Feature-Container">
         <h1 className="text-center"> Our Features</h1>
-        <span>Why choose us?</span>
+        <span>
+          Choose us for quality, affordable fashion that supports sustainability
+          and giving
+        </span>
+
         <div>
           <Features
             imageUrl={card1}
