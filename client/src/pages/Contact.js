@@ -107,7 +107,6 @@ const Contact = () => {
                 technology.
               </div>
               <div className="social-links">
-
                 <a href="https://www.instagram.com/ishika_casley">
                   <i className="fa-brands fa-instagram" />
                 </a>
@@ -118,7 +117,6 @@ const Contact = () => {
                   <i className="fa-solid fa-envelope" />
                 </a>
                 <a href="https://github.com/Ishikacasley14">
-
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -137,7 +135,6 @@ const Contact = () => {
                 solutions that benefit people and the planet, combining my
                 technical skills with a passion for nature to promote a
                 healthier, more sustainable world.{" "}
-
               </div>
               <div className="social-links">
                 <a
@@ -260,7 +257,6 @@ const Contact = () => {
                 </a>
               </li>
               <li>
-
                 <a href="https://www.linkedin.com/company/wear2care">
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
