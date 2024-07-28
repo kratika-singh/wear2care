@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Layout from "../../components/Layout/Layout";
-import UserMenu from "../../components/Layout/UserMenu";
-import axios from "axios";
-import { useAuth } from "../../context/auth";
+import React,{useState,useEffect} from 'react'
+import Layout from '../../components/Layout/Layout'
+import UserMenu from '../../components/Layout/UserMenu';
+import axios from 'axios';
+import { useAuth } from '../../context/auth';
+import "../../Styles/sell.css"
 import moment from "moment";
 const Order = () => {
   const [orders, setOrders] = useState([]);
@@ -21,12 +22,12 @@ const Order = () => {
   }, [auth?.token]);
   return (
     <Layout title={"Dashboard - Orders"}>
-      <div className="container-fluid m-3 p-3">
+      <div className="container-fluid m-3">
         <div className="row">
           <div className="col-md-3">
             <UserMenu />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-8">
             <h1>All Orders</h1>
             {orders?.map((o, i) => {
               return (
