@@ -26,6 +26,7 @@ import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import ProductsSold from "./pages/user/ProductsSold";
 import UpdateProductUser from "./pages/user/UpdateProductUser";
+import AdminOrders from "./pages/Admin/AdminOrders";
 
 function App() {
   return (
@@ -42,10 +43,11 @@ function App() {
           <Route path="user/profile" element={<Profile />} />
           <Route path="user/orders" element={<Order />} />
           <Route path="user/products-sold" element={<ProductsSold />} />
-          <Route path="user/product-sold/:slug" element={<UpdateProductUser />} />
+          <Route
+            path="user/product-sold/:slug"
+            element={<UpdateProductUser />}
+          />
           <Route path="user/sell" element={<Sell />} />
-          
-
         </Route>
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
@@ -54,6 +56,7 @@ function App() {
           <Route path="admin/product/:slug" element={<UpdateProduct />} />
           <Route path="admin/products" element={<Products />} />
           <Route path="admin/users" element={<Users />} />
+          <Route path="admin/orders" element={<AdminOrders />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

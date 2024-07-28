@@ -6,20 +6,20 @@ import { useAuth } from '../../context/auth';
 import "../../Styles/sell.css"
 import moment from "moment";
 const Order = () => {
-    const [orders, setOrders] = useState([]);
-    const [auth, setAuth] = useAuth();
-    const getOrders = async () => {
-      try {
-        const { data } = await axios.get("/api/v1/auth/orders");
-        setOrders(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
-    useEffect(() => {
-      if (auth?.token) getOrders();
-    }, [auth?.token]);
+  const [orders, setOrders] = useState([]);
+  const [auth, setAuth] = useAuth();
+  const getOrders = async () => {
+    try {
+      const { data } = await axios.get("/api/v1/auth/orders");
+      setOrders(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (auth?.token) getOrders();
+  }, [auth?.token]);
   return (
     <Layout title={"Dashboard - Orders"}>
       <div className="container-fluid m-3">
@@ -80,7 +80,7 @@ const Order = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Order
+export default Order;

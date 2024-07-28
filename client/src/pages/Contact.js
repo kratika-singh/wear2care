@@ -100,22 +100,25 @@ const Contact = () => {
               <div className="design">MCA Student</div>
               <div className="about">
                 {" "}
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Impedit cumque placeat vero. Ducimus odit eum quam similique
-                veritatis nostrum, illo blanditiis qui quaerat deserunt at animi
-                ipsum ab corrupti quos!
+                I am a machine learning engineer focused on utilizing AI to
+                solve environmental and humanitarian challenges. My goal is to
+                create solutions that are both socially responsible and
+                sustainable, contributing to a better world through innovative
+                technology.
               </div>
               <div className="social-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+
+                <a href="https://www.instagram.com/ishika_casley">
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/ishika-casley/">
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:ishikacasley764@gmail.com">
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Ishikacasley14">
+
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -133,7 +136,8 @@ const Contact = () => {
                 environmental stewardship. I use technology to create innovative
                 solutions that benefit people and the planet, combining my
                 technical skills with a passion for nature to promote a
-                healthier, more sustainable world,
+                healthier, more sustainable world.{" "}
+
               </div>
               <div className="social-links">
                 <a
