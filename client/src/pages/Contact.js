@@ -1,23 +1,47 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Layout from "./../components/Layout/Layout";
 import kratika from "../components/images/kratika.jpg";
 import ishika from "../components/images/ishika.jpg";
 import dishika from "../components/images/dishika.jpg";
 import sustaible from "../components/images/sustainable.png";
+import SweetAlert2 from "react-sweetalert2";
 import "../Styles/contact.css";
 
 const Contact = () => {
-  const form = useRef();
+  // const form = useRef();
 
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm("service_79wmvx8", "template_dmv45dd", form.current, {
+  //     publicKey: "BM0sgEWbDInFQo0d6",
+  //   });
+  //   e.target.reset();
+  //};
+  const form = useRef();
+  const [swalProps, setSwalProps] = useState({});
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_79wmvx8", "template_dmv45dd", form.current, {
-      publicKey: "BM0sgEWbDInFQo0d6",
-    });
-    e.target.reset();
+    emailjs
+      .sendForm("service_d56bore", "template_6tnve2a", form.current, {
+        publicKey: "h_nWsl9h6rgm_XIPp",
+      })
+      .then(
+        () => {
+          setSwalProps({
+            show: true,
+            title: "SUCCESS!",
+            text: "Message sent successfully",
+          });
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
+
   return (
     <Layout title={"Contact us"}>
       <section className="img-container"></section>
@@ -30,19 +54,39 @@ const Contact = () => {
               <div className="name">Kratika</div>
               <div className="design">MCA Student</div>
               <div className="about">
-              I'm a web developer who is passionate about applying technology to advance environmental and humanitarian causes. With the intention of improving both society and the environment, I concentrate on making work that is socially and sustainably significant.              
+                I'm a web developer who is passionate about applying technology
+                to advance environmental and humanitarian causes. With the
+                intention of improving both society and the environment, I
+                concentrate on making work that is socially and sustainably
+                significant.
               </div>
               <div className="social-links">
-                <a href="https://www.instagram.com/_kratikaaa__">
+                <a
+                  href="https://www.instagram.com/_kratikaaa__"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="https://www.linkedin.com/in/kratika-singh-/">
+                <a
+                  href="https://www.linkedin.com/in/kratika-singh-/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="mailto:kratika3770@gmail.com">
+                <a
+                  href="mailto:kratika3770@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="https://github.com/kratika-singh">
+                <a
+                  href="https://github.com/kratika-singh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -62,16 +106,16 @@ const Contact = () => {
                 ipsum ab corrupti quos!
               </div>
               <div className="social-links">
-                <a href="#">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="#">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="#">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="#">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -85,19 +129,39 @@ const Contact = () => {
               <div className="design">MCA Student</div>
               <div className="about">
                 {" "}
-                
-I'm a tech enthusiast committed to sustainable development and environmental stewardship. I use technology to create innovative solutions that benefit people and the planet, combining my technical skills with a passion for nature to promote a healthier, more sustainable world.              </div>
+                I'm a tech enthusiast committed to sustainable development and
+                environmental stewardship. I use technology to create innovative
+                solutions that benefit people and the planet, combining my
+                technical skills with a passion for nature to promote a
+                healthier, more sustainable world,
+              </div>
               <div className="social-links">
-                <a href="https://www.instagram.com/_dishika.ruhela_">
+                <a
+                  href="https://www.instagram.com/_dishika.ruhela_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="www.linkedin.com/in/dishika-ruhela-09">
+                <a
+                  href="https://www.linkedin.com/in/dishika-ruhela-09/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="mailto:druhela09@gmail.com">
+                <a
+                  href="mailto:druhela09@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-solid fa-envelope" />
                 </a>
-                <a href="https://github.com/dishika-ruhela">
+                <a
+                  href="https://github.com/dishika-ruhela"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-github" />
                 </a>
               </div>
@@ -131,10 +195,7 @@ I'm a tech enthusiast committed to sustainable development and environmental ste
       <section className="contact-main">
         <div className="content-contact">
           <h1>Contact Us</h1>
-          <p>
-            lorem klorecc asjdhasida jsdadwehwbs jfhsdfuhg xjsahdauisdha
-            dhiofefedwd sjsdsdsd{" "}
-          </p>
+          <p>Reach Out, Make a Difference </p>
         </div>
 
         <div className="container-contact">
@@ -177,22 +238,38 @@ I'm a tech enthusiast committed to sustainable development and environmental ste
             <h2 className="txt">Connect</h2>
             <ul className="sci">
               <li>
-                <a href="">
+                <a
+                  href="https://www.instagram.com/wear2care2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i class="fa-brands fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a
+                  href="https://x.com/wear2care2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i class="fa-brands fa-x-twitter"></i>
                 </a>
               </li>
               <li>
                 <a href="">
-                  <i class="fa-brands fa-facebook"></i>
+                  <i
+                    class="fa-brands fa-facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  ></i>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a
+                  href="https://www.youtube.com/channel/UCPMgIoaBhYEpoqiOsRF-vLg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i class="fa-brands fa-youtube"></i>
                 </a>
               </li>
@@ -200,20 +277,20 @@ I'm a tech enthusiast committed to sustainable development and environmental ste
           </div>
 
           <div className="contact-form">
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <h2>Send Message</h2>
               <div className="input-box">
-                <input type="text" name="" required="required" />
+                <input type="text" name="user_name" required="required" />
                 <span>Full Name</span>
               </div>
 
               <div className="input-box">
-                <input type="text" name="" required="required" />
+                <input type="text" name="user_email" required="required" />
                 <span>Email</span>
               </div>
 
               <div className="input-box">
-                <textarea required="required"></textarea>
+                <textarea name="message" required="required"></textarea>
                 <span>Type your message</span>
               </div>
 
