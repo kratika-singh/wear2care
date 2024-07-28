@@ -256,12 +256,9 @@ const Contact = () => {
                 </a>
               </li>
               <li>
-                <a href="">
-                  <i
-                    class="fa-brands fa-facebook"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  ></i>
+
+                <a href="https://www.linkedin.com/company/wear2care">
+                  <i class="fa-brands fa-linkedin"></i>
                 </a>
               </li>
               <li>

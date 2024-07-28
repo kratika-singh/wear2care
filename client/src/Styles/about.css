@@ -55,21 +55,24 @@
 }
 .container1{
     display: flex;
+    flex-wrap: nowrap;
     margin: 0 100px;
+    justify-content: space-between;
 }
 .container1 div{
     margin: 30px;
     background-color: var(--container-color);
     border-radius: 4px;
-    width: 40vh;
+    width: 200px;;
     font-weight: 500;
     font-size: 1.3rem;
     padding: 40px;
+    text-align: center;
 }
 .icon{
     display: block;
     color: var(--title-color);
-    font-size: 5vh;
+    font-size: 43px;
     padding-bottom: 10px;
 }
 .container1 div:hover{
@@ -87,7 +90,7 @@
     width: 50%;
 }
 .container-story img{
-    width:50vh;
+    width:400px;
     border-radius: 15px;
     margin: 0 1rem;
 }
@@ -98,4 +101,59 @@
 }
 .banner{
     text-align: center;
+}
+
+@media (max-width:1326px) {
+    .container1 {
+        flex-wrap: wrap; 
+        margin: 0;
+        justify-content: center; 
+      }
+    
+      .container1 div {
+        flex: 1 1 30%; 
+        margin: 10px; 
+      }
+      .container-story{
+        margin: 40px;
+      }
+
+}
+
+@media (max-width:991px) {
+    .container1 div {
+        flex: 1 1 30%; 
+        margin: 30px; 
+      }
+      .quote{
+        padding: 30px 30px!important;
+      }
+      .container-story{
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+      .container-story div{
+
+        width: 100%;
+      }
+}
+
+@media screen and (max-width: 576px) {
+    .mission h2,img{
+        width: 300px;
+    }
+    .container1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-story img{
+        width: 280px;
+    }
+    .container-story p{
+        padding: 0!important;
+    }
+}
+
+@media screen and (max-width: 350px) {
 }
