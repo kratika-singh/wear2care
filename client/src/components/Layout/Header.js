@@ -106,7 +106,6 @@ const Header = () => {
                     </li>
                   )}
 
-                  
                   <li className="nav-item dropdown">
                     <NavLink
                       className="nav-link dropdown-toggle"
@@ -141,14 +140,17 @@ const Header = () => {
                   </li>
                 </>
               )}
-
-              <li className="nav-item">
-                <Badge count={cart?.length} showZero>
-                  <NavLink to="/cart" className="nav-link">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                  </NavLink>
-                </Badge>
-              </li>
+              {auth.user && (
+                <>
+                  <li className="nav-item">
+                    <Badge count={cart?.length} showZero>
+                      <NavLink to="/cart" className="nav-link">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                      </NavLink>
+                    </Badge>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

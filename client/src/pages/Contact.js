@@ -187,8 +187,8 @@ I'm a tech enthusiast committed to sustainable development and environmental ste
                 </a>
               </li>
               <li>
-                <a href="">
-                  <i class="fa-brands fa-facebook"></i>
+                <a href="https://www.linkedin.com/company/wear2care">
+                  <i class="fa-brands fa-linkedin"></i>
                 </a>
               </li>
               <li>

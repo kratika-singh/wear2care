@@ -18,6 +18,7 @@ const UpdateProductUser = () => {
     const [category, setCategory] = useState("");
     const [brand, setBrand] = useState("");
     const [size, setSize] = useState("");
+    const [donation, setDonation] = useState("");
     const [photo, setPhoto] = useState("");
     const [id, setId] = useState("");
 
@@ -34,6 +35,7 @@ const UpdateProductUser = () => {
           setCondition(data.product.condition);
           setBrand(data.product.brand);
           setCategory(data.product.category._id);
+          setDonation(data.product.donation)
         } catch (error) {
           console.log(error);
         }
@@ -70,6 +72,7 @@ const UpdateProductUser = () => {
           productData.append("condition", condition);
           photo && productData.append("photo", photo);
           productData.append("category", category);
+          productData.append("donation",donation)
           const { data } = axios.put(
             `/api/v1/product/update-product/${id}`,
             productData
@@ -95,7 +98,7 @@ const UpdateProductUser = () => {
             `/api/v1/product/delete-product/${id}`
           );
           toast.success("Product DEleted Succfully");
-          navigate("dashboard/user/products-sold");
+          navigate("/dashboard/user/products-sold");
         } catch (error) {
           console.log(error);
           toast.error("Something went wrong");
@@ -118,6 +121,7 @@ const UpdateProductUser = () => {
                 showSearch
                 className="form-select mb-3"
                 onChange={(value) => setCategory(value)}
+                value={category}
               >
                 {categories?.map((c) => (
                   <Option key={c._id} value={c._id}>
@@ -165,6 +169,7 @@ const UpdateProductUser = () => {
                 showSearch
                 className="form-select mb-3"
                 onChange={(value) => setCondition(value)}
+                value={condition}
               >
                   <Option value="New With Tag">
                     New With Tag
