@@ -14,9 +14,10 @@ const UpdateProduct = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [condition, setCondition] = useState("");
   const [category, setCategory] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [shipping, setShipping] = useState("");
+  const [brand, setBrand] = useState("");
+  const [size, setSize] = useState("");
   const [photo, setPhoto] = useState("");
   const [id, setId] = useState("");
 
@@ -30,9 +31,9 @@ const UpdateProduct = () => {
       setId(data.product._id);
       setDescription(data.product.description);
       setPrice(data.product.price);
-      setPrice(data.product.price);
-      setQuantity(data.product.quantity);
-      setShipping(data.product.shipping);
+      setSize(data.product.size);
+      setCondition(data.product.condition);
+      setBrand(data.product.brand);
       setCategory(data.product.category._id);
     } catch (error) {
       console.log(error);
@@ -67,7 +68,9 @@ const UpdateProduct = () => {
       productData.append("name", name);
       productData.append("description", description);
       productData.append("price", price);
-      productData.append("quantity", quantity);
+      productData.append("brand", brand);
+          productData.append("size", size);
+          productData.append("condition", condition);
       photo && productData.append("photo", photo);
       productData.append("category", category);
       const { data } = axios.put(
@@ -170,6 +173,38 @@ const UpdateProduct = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
+              <Select
+                bordered={false}
+                placeholder="Condition "
+                size="large"
+                showSearch
+                className="form-select mb-3"
+                onChange={(value) => setCondition(value)}
+                value={condition}
+              >
+                  <Option value="New With Tag">
+                    New With Tag
+                  </Option>
+                  <Option value="Like New">
+                    Like New
+                  </Option>
+                  <Option value="Good">
+                    Good
+                  </Option>
+                  <Option value="Used">
+                   Used
+                  </Option>
+
+              </Select>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  value={brand}
+                  placeholder="Write a brand"
+                  className="form-control"
+                  onChange={(e) => setBrand(e.target.value)}
+                />
+              </div>
               <div className="mb-3">
                 <textarea
                   type="text"
@@ -191,29 +226,14 @@ const UpdateProduct = () => {
               </div>
               <div className="mb-3">
                 <input
-                  type="number"
-                  value={quantity}
-                  placeholder="write a quantity"
+                  type="text"
+                  value={size}
+                  placeholder="Size of the Product"
                   className="form-control"
-                  onChange={(e) => setQuantity(e.target.value)}
+                  onChange={(e) => setSize(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
-                <Select
-                  bordered={false}
-                  placeholder="Select Shipping "
-                  size="large"
-                  showSearch
-                  className="form-select mb-3"
-                  onChange={(value) => {
-                    setShipping(value);
-                  }}
-                  value={shipping ? "yes" : "No"}
-                >
-                  <Option value="0">No</Option>
-                  <Option value="1">Yes</Option>
-                </Select>
-              </div>
+              
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleUpdate}>
                   UPDATE PRODUCT

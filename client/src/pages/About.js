@@ -45,7 +45,6 @@ const About = () => {
           <div>
             <i className="fa-solid fa-piggy-bank icon" />
             <span>Cost Effective</span>
-            
           </div>
 
           <div>
@@ -74,22 +73,30 @@ const About = () => {
         <h1>Our Story</h1>
         <div className="container-story">
           <div>
-            <img src={storyImg}/>
+            <img src={storyImg} />
           </div>
           <div>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consequuntur odio aspernatur vitae laborum perferendis fuga quod quas aliquid perspiciatis accusantium rem sunt neque iste, autem ducimus provident atque? Ratione.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consequuntur odio aspernatur vitae laborum perferendis fuga quod quas aliquid perspiciatis accusantium rem sunt neque iste, autem ducimus provident atque? Ratione
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consequuntur odio aspernatur vitae laborum perferendis fuga quod quas aliquid perspiciatis accusantium rem sunt neque iste, autem ducimus provident atque? Ratione
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, consequuntur odio aspernatur vitae laborum perferendis fuga quod quas aliquid perspiciatis accusantium rem sunt neque iste, autem ducimus provident atque? Ratione
+            <h3>With Every Stitch a Purpose</h3>
+            <p>
+              We believe passionately in a sustainable future through our
+              commitment to buying, selling, and donating preloved clothes. Our
+              mission focuses on responsible practices, from supporting NGO
+              donations to promoting reuse and recycling. We offer high-quality,
+              fresh fashion at less cost, ensuring that every item you purchase
+              or donate contributes to a greener planet. The road to
+              sustainability is a journey with no clear destination, but with
+              every stitch, we are making progress and making a difference. Join
+              us in transforming closets and changing lives.
             </p>
             <h5>-Team Wear2Care</h5>
           </div>
         </div>
       </section>
       <section className="banner">
-      <div className="quote">
-          We give second life to used clothes. We help you to reduce Carbon footprints,clean out your closet and save money.
-      </div>
+        <div className="quote">
+          We give second life to used clothes. We help you to reduce Carbon
+          footprints,clean out your closet and save money.
+        </div>
       </section>
     </Layout>
   );

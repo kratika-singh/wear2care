@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import UserMenu from "../../components/Layout/UserMenu";
 import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
+import "../../Styles/sell.css"
 import toast from "react-hot-toast";
 import { useAuth } from "../../context/auth";
 import { Link } from "react-router-dom";
@@ -31,7 +32,7 @@ const ProductsSold = () => {
         <div className="col-md-3">
           <UserMenu />
         </div>
-        <div className="col-md-9 ">
+        <div className="col-md-9 list-p ">
           <h1 className="text-center">All Products List</h1>
           <div className="d-flex flex-wrap">
             {products?.filter((p) => p.userId === auth?.user?.email).map((p) => (
@@ -48,15 +49,13 @@ const ProductsSold = () => {
                   />
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text">{p.description}</p>
+                    <p className="card-text">{p.description.substring(0, 30)}</p>
                   </div>
                 </div>
               </Link>
             ))}
             
           </div>
-        </div>
-        <div className="col-md-9 ">
           <h1 className="text-center">Donated Products</h1>
           <div className="d-flex flex-wrap">
             {products?.filter((p) =>p.userId === auth?.user?.email && p.donation === true).map((p) => (
