@@ -23,6 +23,7 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.24.1",
     "react-scripts": "^5.0.1",
+    "react-sweetalert2": "^0.6.0",
     "react-toastify": "^10.0.5",
     "toastify": "^2.0.1",
     "tsconfig-paths": "^4.2.0",

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +10,17 @@
 /* font-family: "Poppins", sans-serif; */
 /* font-family: "Playfair Display", serif; */
 
-:root{
-  --body-color : #EBF4F6;
-  --container-color : #ffffff;
-  --title-color : #37B7C3;
+:root {
+  --body-color: #EBF4F6;
+  --container-color: #ffffff;
+  --title-color: #37B7C3;
   --title-color-dark: #088395;
-  --text-color:#555555;
-  --highlight-color : #071952;
+  --text-color: #555555;
+  --highlight-color: #071952;
 }
 
 /*//Navbar css//*/
-body{
+body {
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -30,6 +31,7 @@ body{
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
 }
+
 /*=====================================
 =========== Footer===================*/
 /* Resetting default styles */
@@ -58,7 +60,25 @@ body{
 
 .footer a:hover {
   color: var(--title-color-dark);
-  border-bottom: 1px solid var(--title-color-dark);
+
+}
+
+.footer h2 {
+  color: black;
+  font-weight: 800;
+  font-size: 25px;
+  position: relative;
+}
+
+.footer h2::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: -5px;
+  width: 50px;
+  height: 5px;
+  border-radius: 20px;
+  background-color: var(--title-color);
 }
 
 /* Footer section styling */
@@ -67,13 +87,22 @@ body{
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.footer-section > div {
-  margin-bottom: 15px; /* Reduced margin */
-  flex: 1 1 200px; /* Adjusted flex basis */
+.footer p{
+  color: var(--text-color);
+  padding-right: 30px;
+}
+.footer-section>div {
+  margin-bottom: 15px;
+  /* Reduced margin */
+  flex: 1 1 200px;
+  /* Adjusted flex basis */
 }
 
 /* Styling for individual sections */
-.sci1, .sci2, .sci4, .sci5 {
+.sci1,
+.sci2,
+.sci4,
+.sci5 {
   flex: 1;
   margin: 10px;
 }
@@ -86,33 +115,46 @@ body{
 
 /* Styling for Follow Us section */
 .sci2 ul {
-  list-style: none; /* Removes default bullet points */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
+  list-style: none;
+  /* Removes default bullet points */
+  padding: 0;
+  /* Removes default padding */
+  margin: 0;
+  /* Removes default margin */
 }
 
 .sci2 li {
-  margin-bottom: 10px; /* Adds space between list items */
-  display: flex; /* Aligns icon and text horizontally */
-  align-items: center; /* Centers items vertically */
+  margin-bottom: 10px;
+  /* Adds space between list items */
+  display: flex;
+  /* Aligns icon and text horizontally */
+  align-items: center;
+  /* Centers items vertically */
 }
 
 .sci2 li a {
-  color: var(--title-color); /* Sets color for icons and text */
-  text-decoration: none; /* Removes underline from links */
-  display: flex; /* Aligns items horizontally */
-  align-items: center; /* Centers items vertically */
-  font-size: 24px; /* Adjusts size of social media icons */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  color: var(--title-color);
+  /* Sets color for icons and text */
+  text-decoration: none;
+  /* Removes underline from links */
+  display: flex;
+  /* Aligns items horizontally */
+  align-items: center;
+  /* Centers items vertically */
+  font-size: 24px;
+  /* Adjusts size of social media icons */
 }
 
 .sci2 li a:hover {
-  color: var(--title-color-dark); /* Changes color on hover */
+  color: var(--title-color-dark);
+  /* Changes color on hover */
 }
 
 .social-text {
-  margin-left: 10px; /* Space between icon and text */
-  font-size: 16px; /* Adjusts size of social media text */
+  margin-left: 10px;
+  /* Space between icon and text */
+  font-size: 16px;
+  /* Adjusts size of social media text */
 }
 
 /* Dropdown section styling */
@@ -181,35 +223,51 @@ body{
 .sci5 li a:hover {
   color: var(--title-color-dark);
 }
+
 /* Styling for category links similar to social media */
 .category-links {
-  list-style: none; /* Remove default bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+  list-style: none;
+  /* Remove default bullet points */
+  padding: 0;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
 }
 
 .category-links li {
-  margin-bottom: 10px; /* Add space between items */
-  display: flex; /* Align icon and text horizontally */
-  align-items: center; /* Center items vertically */
+  margin-bottom: 10px;
+  /* Add space between items */
+  display: flex;
+  /* Align icon and text horizontally */
+  align-items: center;
+  /* Center items vertically */
 }
 
 .category-links a {
-  color: var(--title-color); /* Set text color */
-  text-decoration: none; /* Remove underline */
-  display: flex; /* Align icon and text horizontally */
-  align-items: center; /* Center items vertically */
-  font-size: 16px; /* Adjust font size */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  color: var(--title-color);
+  /* Set text color */
+  text-decoration: none;
+  /* Remove underline */
+  display: flex;
+  /* Align icon and text horizontally */
+  align-items: center;
+  /* Center items vertically */
+  font-size: 16px;
+  /* Adjust font size */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
 }
 
 .category-links a:hover {
-  color: var(--title-color-dark); /* Color change on hover */
+  color: var(--title-color-dark);
+  /* Color change on hover */
 }
 
 .social-text {
-  margin-left: 10px; /* Space between icon and text */
-  font-size: 16px; /* Adjust font size */
+  margin-left: 10px;
+  /* Space between icon and text */
+  font-size: 16px;
+  /* Adjust font size */
 }
 
 /* Copyright text styling */
@@ -246,10 +304,12 @@ body{
   padding: 10px;
   margin-top: 10px;
 }
+
 .pnf-btn:hover {
   background-color: black;
   color: white;
 }
+
 /* ========================================= */
 /* =========contact us ========= */
 .contactus {
@@ -272,10 +332,12 @@ body{
   font-size: 24px;
   text-transform: uppercase;
 }
+
 .cat-btn:hover {
   background-color: #434343;
   color: white;
 }
+
 /*================================
 ======== Product - Link=========*/
 .product-link {

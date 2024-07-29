@@ -39,6 +39,16 @@
   display: block;
   margin-bottom: 1rem;
 }
+.Feature-Container h1 {
+  margin: 25px;
+  color: var(--title-color);
+  text-align: center;
+  font-size: 45px;
+margin: 25px;
+color: var(--title-color);
+text-align: center;
+font-size: 45px;
+}
 
 .Feature-Container h3 {
   margin: 25px;
@@ -73,6 +83,10 @@
 .container-genz .highlight{
   color: var(--title-color);
   font-family: "Dancing Script", cursive;
+} 
+.products h1{
+
+  color: var(--title-color);
 }
 .all-product{
   display: flex;
