@@ -43,21 +43,9 @@
     height: 250px;
   }
 
-h1{
+.col-md-8 h1, h1{
     margin: 25px;
     color:black;
     font-size: 45px;
     position: relative;
-    display: inline-block;
-    text-align: center;
-}
-h1::after{
-    content: "";
-    position: absolute;
-    left: 10px;
-    bottom: -15px;
-    width: 100px;
-    height: 10px; 
-    border-radius: 20px;
-    background-color: var(--title-color); 
 }

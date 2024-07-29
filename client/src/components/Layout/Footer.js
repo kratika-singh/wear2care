@@ -16,6 +16,8 @@ const Footer = () => {
             <h2>About us</h2>
           </Link>
 
+          <p> We are building a sustainable future of fashion that is affordable
+          as well as trendy.</p>
           <img src="../../../images/logo.png" alt="Logo" className="logo" />
         </div>
         <div className="sci2">
@@ -104,7 +106,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrightText">
-        <p>CopyRight 2024 Wear2care. All rights Reserved.</p>
+        <p> © Copyright 2024 Wear2care. All rights reserved.</p>
       </div>
     </div>
   );

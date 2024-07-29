@@ -9,16 +9,6 @@ import SweetAlert2 from "react-sweetalert2";
 import "../Styles/contact.css";
 
 const Contact = () => {
-  // const form = useRef();
-
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs.sendForm("service_79wmvx8", "template_dmv45dd", form.current, {
-  //     publicKey: "BM0sgEWbDInFQo0d6",
-  //   });
-  //   e.target.reset();
-  //};
   const form = useRef();
   const [swalProps, setSwalProps] = useState({});
   const sendEmail = (e) => {
@@ -44,7 +34,7 @@ const Contact = () => {
 
   return (
     <Layout title={"Contact us"}>
-      <section className="img-container"></section>
+      <section className="img-container1"></section>
       <section className="container-team">
         <h1>Meet Our team</h1>
         <div className="sub-container">
@@ -257,7 +247,11 @@ const Contact = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/wear2care">
+                <a
+                  href="https://www.linkedin.com/company/wear2care"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
               </li>

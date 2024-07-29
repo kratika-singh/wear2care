@@ -157,18 +157,17 @@ const HomePage = () => {
               - but don't have a single platform to sell them on.
               <span>Until now.</span>
             </p>
-              {!auth.user ? (
-                <>
-                  <button onClick={() => navigate("/login")}>Sell Now</button>
-                </>
-              ) : (
-                <>
-                  <button onClick={() => navigate("/dashboard/user/sell")}>
-                    Sell Now
-                  </button>
-                </>
-              )}
-            
+            {!auth.user ? (
+              <>
+                <button onClick={() => navigate("/login")}>Sell Now</button>
+              </>
+            ) : (
+              <>
+                <button onClick={() => navigate("/dashboard/user/sell")}>
+                  Sell Now
+                </button>
+              </>
+            )}
           </div>
         </div>
       </section>
