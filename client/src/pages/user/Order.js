@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react'
-import Layout from '../../components/Layout/Layout'
-import UserMenu from '../../components/Layout/UserMenu';
-import axios from 'axios';
-import { useAuth } from '../../context/auth';
-import "../../Styles/sell.css"
+import React, { useState, useEffect } from "react";
+import Layout from "../../components/Layout/Layout";
+import UserMenu from "../../components/Layout/UserMenu";
+import axios from "axios";
+import { useAuth } from "../../context/auth";
+import "../../Styles/sell.css";
 import moment from "moment";
 const Order = () => {
   const [orders, setOrders] = useState([]);
