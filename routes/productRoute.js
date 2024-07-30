@@ -16,6 +16,7 @@ import {
   productCategoryController,
   braintreeTokenController,
   brainTreePaymentController,
+  updateProductQuantity
 } from "../controllers/productController.js";
 import formidable from "express-formidable";
 
@@ -66,6 +67,8 @@ router.get("/related-product/:pid/:cid", realtedProductController);
 
 //category wise product
 router.get("/product-category/:slug", productCategoryController);
+
+router.put('/update-quantity', updateProductQuantity);
 
 //payments routes
 //token

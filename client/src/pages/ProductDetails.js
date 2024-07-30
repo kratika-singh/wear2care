@@ -90,7 +90,7 @@ const ProductDetails = () => {
           </>
         )}
         <div className="p-container">
-          {relatedProducts?.map((p) => (
+          {relatedProducts?.filter(p => p.donation == false).map((p) => (
             <div key={p._id} className="col-md-4 col-sm-6 mb-4">
             <div className="card h-100">
               <img

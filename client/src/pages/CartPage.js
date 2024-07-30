@@ -54,24 +54,25 @@ const CartPage = () => {
   }, [auth?.token]);
 
   //handle payments
-  const handlePayment = async () => {
-    try {
-      setLoading(true);
-      const { nonce } = await instance.requestPaymentMethod();
-      const { data } = await axios.post("/api/v1/product/braintree/payment", {
-        nonce,
-        cart,
-      });
-      setLoading(false);
-      localStorage.removeItem("cart");
-      setCart([]);
-      navigate("/dashboard/user/orders");
-      toast.success("Payment Completed Successfully ");
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+    const handlePayment = async () => {
+      try {
+        setLoading(true);
+        const { nonce } = await instance.requestPaymentMethod();
+        const { data } = await axios.post("/api/v1/product/braintree/payment", {
+          nonce,
+          cart,
+        });    
+        setLoading(false);
+        localStorage.removeItem("cart");
+        setCart([]);
+        navigate("/dashboard/user/orders");
+        toast.success("Payment Completed Successfully");
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
+    
   return (
     <Layout>
       <div className="container">

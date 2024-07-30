@@ -208,7 +208,7 @@ const HomePage = () => {
           <h1 className="text-center">All Products</h1>
           <span className="subtitle">Choose what You Like</span>
           <div className="row">
-            {products?.map((p) => (
+            {products?.filter(p => p.donation == false).map((p) => (
               <div key={p._id} className="col-md-4 col-sm-6 mb-4">
                 <div className="card h-100">
                   <img
