@@ -1,7 +1,6 @@
 import productModel from "../models/productModel.js";
 import categoryModel from "../models/categoryModel.js";
 import orderModel from "../models/orderModel.js";
-
 import fs from "fs";
 import slugify from "slugify";
 import braintree from "braintree";
@@ -38,7 +37,7 @@ export const createProductController = async (req, res) => {
         return res.status(500).send({ error: "Size is Required" });
       case !brand:
         return res.status(500).send({ error: "Brand is Required" });
-     case photo && photo.size > 1000000:
+     case photo && photo.size > 3000000:
         return res
           .status(500)
           .send({ error: "photo is Required and should be less then 1mb" });
@@ -199,6 +198,25 @@ export const updateProductController = async (req, res) => {
       error,
       message: "Error in Updte product",
     });
+  }
+};
+
+export const updateProductQuantity = async (req, res) => {
+  try {
+    const { productId, quantity } = req.body;
+
+    // Find the product by its ID and update the quantity
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    product.quantity = quantity;
+    await product.save();
+
+    res.status(200).json({ message: 'Product quantity updated successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
   }
 };
 

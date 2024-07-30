@@ -28,7 +28,7 @@ const CategoryProduct = () => {
 
         <div className='row'>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
+            {products?.filter(p => p.donation == false).map((p) => (
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}

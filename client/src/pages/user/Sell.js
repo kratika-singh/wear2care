@@ -52,6 +52,7 @@ const Sell = () => {
       productData.append("donation", donation);
       productData.append("brand", brand);
       productData.append("userId", auth?.user?.email);
+      productData.append("quantity", 1);
 
       const { data } = await axios.post(
         "/api/v1/product/create-product",
