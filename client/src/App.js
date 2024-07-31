@@ -27,6 +27,7 @@ import CartPage from "./pages/CartPage";
 import ProductsSold from "./pages/user/ProductsSold";
 import UpdateProductUser from "./pages/user/UpdateProductUser";
 import AdminOrders from "./pages/Admin/AdminOrders";
+import DonatedClothes from "./pages/Admin/DonatedClothes";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path="admin/product/:slug" element={<UpdateProduct />} />
           <Route path="admin/products" element={<Products />} />
           <Route path="admin/users" element={<Users />} />
+          <Route path="admin/donated-clothes" element={<DonatedClothes/>} />
           <Route path="admin/orders" element={<AdminOrders />} />
         </Route>
         <Route path="/register" element={<Register />} />

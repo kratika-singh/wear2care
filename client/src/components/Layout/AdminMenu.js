@@ -31,6 +31,12 @@ const AdminMenu = () => {
         >
           Users
         </NavLink> */}
+        <NavLink
+          to="/dashboard/admin/donated-clothes"
+          className="list-group-item list-group-item-action"
+        >
+          Donated Clothes
+        </NavLink>
       </div>
     </div>
   );
