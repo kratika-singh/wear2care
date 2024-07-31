@@ -59,6 +59,13 @@ const Contact = () => {
                   <i className="fa-brands fa-instagram" />
                 </a>
                 <a
+                  href="https://kratika-singh.github.io/portfolio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </a>
+                <a
                   href="https://www.linkedin.com/in/kratika-singh-/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -97,13 +104,32 @@ const Contact = () => {
                 technology.
               </div>
               <div className="social-links">
-                <a href="https://www.instagram.com/ishika_casley">
+                <a
+                  href="https://www.instagram.com/ishika_casley"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-instagram" />
                 </a>
-                <a href="https://www.linkedin.com/in/ishika-casley/">
+                <a
+                  href="https://github.com/Ishikacasley14"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-solid fa-user"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ishika-casley/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-brands fa-linkedin" />
                 </a>
-                <a href="mailto:ishikacasley764@gmail.com">
+                <a
+                  href="mailto:ishikacasley764@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fa-solid fa-envelope" />
                 </a>
                 <a href="https://github.com/Ishikacasley14">
@@ -212,7 +238,7 @@ const Contact = () => {
               </div>
               <div className="text">
                 <h3>Phone</h3>
-                <p>94523456</p>
+                <p>+91-42424242</p>
               </div>
             </div>
 
@@ -223,7 +249,7 @@ const Contact = () => {
               </div>
               <div className="text">
                 <h3>Email</h3>
-                <p>wearcare625@gmail.com</p>
+                <p>wear2care91430@gmail.com</p>
               </div>
             </div>
             <h2 className="txt">Connect</h2>

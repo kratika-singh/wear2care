@@ -25,17 +25,17 @@ const Footer = () => {
           <ul className="social-links">
             <li>
               <a
-                href="https://facebook.com"
+                 href="https://www.linkedin.com/company/wear2care"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fa-brands fa-facebook"></i>
-                <span className="social-text">Facebook</span>
+                 <i class="fa-brands fa-linkedin"></i>
+                <span className="social-text">Linkedin</span>
               </a>
             </li>
             <li>
               <a
-                href="https://twitter.com"
+                href="https://x.com/wear2care2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -45,7 +45,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/channel/UCPMgIoaBhYEpoqiOsRF-vLg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -55,7 +55,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/wear2care2/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
