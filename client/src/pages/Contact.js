@@ -18,18 +18,7 @@ const Contact = () => {
       .sendForm("service_d56bore", "template_6tnve2a", form.current, {
         publicKey: "h_nWsl9h6rgm_XIPp",
       })
-      .then(
-        () => {
-          setSwalProps({
-            show: true,
-            title: "SUCCESS!",
-            text: "Message sent successfully",
-          });
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+      e.target.reset();
   };
 
   return (

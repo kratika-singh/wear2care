@@ -4,6 +4,7 @@ import Typewriter from "typewriter-effect";
 import "../Styles/about.css";
 import illustration from "../components/images/about-illustration.png";
 import storyImg from "../components/images/story.jpg";
+import ngo from "../components/images/ngo.jpg"
 const About = () => {
   return (
     <Layout title={"About us"}>
@@ -67,6 +68,46 @@ const About = () => {
           </div>
         </div>
         <p></p>
+      </section>
+
+      <section className="ngo">
+      <h1>NGO With Us!</h1>
+      <div className="ngo-container">
+        <img src={ngo}/>
+        <div className="ngo-content">
+          <p>Helping Hut (Delhi) is a not for profit non government organization with the visions like helping poor in any way possible, stopping beggary by giving them some occupation and helping poor kids in getting education.</p>
+          <div className="social-links">
+                <a
+                  href="https://www.instagram.com/helping_hut/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-instagram" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/search/results/all/?keywords=helping%20hut%20&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=bf1312c1-105c-4871-8895-632e95d4592c&sid=7cg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin" />
+                </a>
+                <a
+                  href="mailto:contact@helpinghutngo.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-solid fa-envelope" />
+                </a>
+                <a
+                  href="https://www.facebook.com/helpinghutngo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-facebook" />
+                </a>
+              </div>
+        </div>
+      </div>
       </section>
 
       <section className="story">
