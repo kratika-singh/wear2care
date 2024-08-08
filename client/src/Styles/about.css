@@ -18,7 +18,7 @@
 .mission{
     text-align: center;
 }
-.mission h1,.impact h1,.story h1{
+.mission h1,.impact h1,.story h1,.ngo h1{
     margin: 25px;
     color:black;
     font-size: 45px;
@@ -26,7 +26,7 @@
     display: inline-block;
     text-align: center;
 }
-.mission h1::after,.impact h1::after,.story h1::after{
+.mission h1::after,.impact h1::after,.story h1::after,.ngo h1::after{
     content: "";
     position: absolute;
     left: 10px;
@@ -53,6 +53,7 @@
 .impact{
     text-align: center;
 }
+
 .container1{
     display: flex;
     flex-wrap: nowrap;
@@ -78,6 +79,26 @@
 .container1 div:hover{
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ngo{
+    background-color: var(--container-color);
+    text-align: center;
+}
+.ngo-container{
+    display: flex;
+    gap: 50px;
+    padding: 30px;
+}
+.ngo-container img{
+    width: 120px;
+}
+.ngo-content{
+    text-align: justify;
+}
+.ngo-content .social-links{
+    text-align: center;
+    font-size: 18px;
 }
 .story{
     text-align: center;
@@ -152,6 +173,10 @@
     }
     .container-story p{
         padding: 0!important;
+    }
+    .ngo-container{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
