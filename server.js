@@ -16,7 +16,6 @@ connectDB();
 
 // rest object
 const app = express();
-const port =process.env.PORT || 8080;
 // middleware
 app.use(cors());
 app.use(express.json());
@@ -34,7 +33,7 @@ app.get("/", (req, res) => {
   });
 });
 // PORT
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 //run listen
 app.listen(PORT, () => {
