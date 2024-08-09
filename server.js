@@ -18,7 +18,7 @@ connectDB();
 const app = express();
 // middleware
 app.use(cors({
-    origin: 'https://wear2care-frontend.onrender.com',
+    origin: "https://wear2care-5zk4.onrender.com",
     credentials: true, 
 }));
 app.use(express.json());
