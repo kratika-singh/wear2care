@@ -98,6 +98,11 @@ git push -u origin <your_branch_name>
 
 10. Add appropriate title and description to your pull request explaining your changes. Click on `Create Pull Request`
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
 
 
 
