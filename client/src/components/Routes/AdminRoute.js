@@ -10,7 +10,9 @@ export default function PrivateRoute() {
 
   useEffect(() => {
     const authCheck = async () => {
-      const res = await axios.get("/api/v1/auth/admin-auth");
+      const res = await axios.get(
+        "https://wear2care.onrender.com/api/v1/auth/admin-auth"
+      );
       if (res.data.ok) {
         setOk(true);
       } else {

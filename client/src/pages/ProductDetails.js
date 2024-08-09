@@ -22,7 +22,7 @@ const ProductDetails = () => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/get-product/${params.slug}`
+        `https://wear2care.onrender.com/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category?._id);
@@ -34,7 +34,7 @@ const ProductDetails = () => {
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/related-product/${pid}/${cid}`
+        `https://wear2care.onrender.com/api/v1/product/related-product/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);
     } catch (error) {
@@ -48,7 +48,7 @@ const ProductDetails = () => {
         <div className="main-container">
           <div className="img-container1">
             <img
-              src={`/api/v1/product/product-photo/${product._id}`}
+              src={`https://wear2care.onrender.com/api/v1/product/product-photo/${product._id}`}
               alt={product.name}
             />
           </div>
@@ -62,21 +62,21 @@ const ProductDetails = () => {
             <h6>Brand: {product.brand}</h6>
             <h6>Size: {product.size}</h6>
             {auth.user && (
-                  <>
-            <button
-              className=""
-              onClick={() => {
-                setCart([...cart, product]);
-                localStorage.setItem(
-                  "cart",
-                  JSON.stringify([...cart, product])
-                );
-                toast.success("Item added");
-              }}
-            >
-              Add to cart
-            </button>
-            </>
+              <>
+                <button
+                  className=""
+                  onClick={() => {
+                    setCart([...cart, product]);
+                    localStorage.setItem(
+                      "cart",
+                      JSON.stringify([...cart, product])
+                    );
+                    toast.success("Item added");
+                  }}
+                >
+                  Add to cart
+                </button>
+              </>
             )}
           </div>
         </div>
@@ -90,51 +90,53 @@ const ProductDetails = () => {
           </>
         )}
         <div className="p-container">
-          {relatedProducts?.filter(p => p.donation == false).map((p) => (
-            <div key={p._id} className="col-md-4 col-sm-6 mb-4">
-            <div className="card h-100">
-              <img
-                src={`/api/v1/product/product-photo/${p._id}`}
-                className="card-img-top card_img"
-                alt={p.name}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{p.name}</h5>
-                <p className="card-text">
-                  {p.description.substring(0, 30)}
-                </p>
-                <p className="card-text">Rs. {p.price}</p>
-                <button
-                  href="#"
-                  class="btn  btn-secondary ms-1"
-                  onClick={() => navigate(`/product/${p.slug}`)}
-                >
-                  More Details
-                </button>
-                {auth.user && (
-                  <>
+          {relatedProducts
+            ?.filter((p) => p.donation == false)
+            .map((p) => (
+              <div key={p._id} className="col-md-4 col-sm-6 mb-4">
+                <div className="card h-100">
+                  <img
+                    src={`https://wear2care.onrender.com/api/v1/product/product-photo/${p._id}`}
+                    className="card-img-top card_img"
+                    alt={p.name}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{p.name}</h5>
+                    <p className="card-text">
+                      {p.description.substring(0, 30)}
+                    </p>
+                    <p className="card-text">Rs. {p.price}</p>
                     <button
                       href="#"
-                      class="btn btn-secondary ms-1"
-                      onClick={() => {
-                        setCart([...cart, p]);
-                        localStorage.setItem(
-                          cart,
-                          JSON.stringify([...cart, p])
-                        );
-                        toast.success("Item added");
-                      }}
+                      class="btn  btn-secondary ms-1"
+                      onClick={() => navigate(`/product/${p.slug}`)}
                     >
-                      ADD TO CART
+                      More Details
                     </button>
-                  </>
-                )}
+                    {auth.user && (
+                      <>
+                        <button
+                          href="#"
+                          class="btn btn-secondary ms-1"
+                          onClick={() => {
+                            setCart([...cart, p]);
+                            localStorage.setItem(
+                              cart,
+                              JSON.stringify([...cart, p])
+                            );
+                            toast.success("Item added");
+                          }}
+                        >
+                          ADD TO CART
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ))}
         </div>
-        </div>
+      </div>
     </Layout>
   );
 };
