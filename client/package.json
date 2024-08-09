@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:8080",
+  "proxy": "https://wear2care.onrender.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
