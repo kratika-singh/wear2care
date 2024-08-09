@@ -31,7 +31,7 @@ const HomePage = () => {
   //get all cat
   const getAllcategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("https://wear2care.onrender.com/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -49,7 +49,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://wear2care.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -61,7 +61,7 @@ const HomePage = () => {
   //get total count
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/product-count");
+      const { data } = await axios.get("https://wear2care.onrender.com/api/v1/product/product-count");
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -76,7 +76,7 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://wear2care.onrender.com/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -106,7 +106,7 @@ const HomePage = () => {
   //get filtered product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post("https://wear2care.onrender.com/api/v1/product/product-filters", {
         checked,
         radio,
       });
@@ -159,11 +159,11 @@ const HomePage = () => {
             </p>
             {!auth.user ? (
               <>
-                <button onClick={() => navigate("/login")}>Sell Now</button>
+                <button onClick={() => navigate("https://wear2care.onrender.com/login")}>Sell Now</button>
               </>
             ) : (
               <>
-                <button onClick={() => navigate("/dashboard/user/sell")}>
+                <button onClick={() => navigate("https://wear2care.onrender.com/dashboard/user/sell")}>
                   Sell Now
                 </button>
               </>
