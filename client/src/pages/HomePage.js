@@ -31,7 +31,9 @@ const HomePage = () => {
   //get all cat
   const getAllcategory = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get(
+        "https://wear2care.onrender.com/api/v1/category/get-category"
+      );
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -49,7 +51,9 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(
+        `https://wear2care.onrender.com/api/v1/product/product-list/${page}`
+      );
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -61,7 +65,9 @@ const HomePage = () => {
   //get total count
   const getTotal = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/product-count");
+      const { data } = await axios.get(
+        "https://wear2care.onrender.com/api/v1/product/product-count"
+      );
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -76,7 +82,9 @@ const HomePage = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(
+        `https://wear2care.onrender.com/api/v1/product/product-list/${page}`
+      );
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -106,10 +114,13 @@ const HomePage = () => {
   //get filtered product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
-        checked,
-        radio,
-      });
+      const { data } = await axios.post(
+        "https://wear2care.onrender.com/api/v1/product/product-filters",
+        {
+          checked,
+          radio,
+        }
+      );
       setProducts(data?.products);
     } catch (error) {
       console.log(error);
@@ -208,49 +219,51 @@ const HomePage = () => {
           <h1 className="text-center">All Products</h1>
           <span className="subtitle">Choose what You Like</span>
           <div className="row">
-            {products?.filter(p => p.donation == false).map((p) => (
-              <div key={p._id} className="col-md-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top card_img"
-                    alt={p.name}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text">
-                      {p.description.substring(0, 30)}
-                    </p>
-                    <p className="card-text">Rs. {p.price}</p>
-                    <button
-                      href="#"
-                      class="btn  btn-secondary ms-1"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
-                    {auth.user && (
-                      <>
-                        <button
-                          href="#"
-                          class="btn btn-secondary ms-1"
-                          onClick={() => {
-                            setCart([...cart, p]);
-                            localStorage.setItem(
-                              cart,
-                              JSON.stringify([...cart, p])
-                            );
-                            toast.success("Item added");
-                          }}
-                        >
-                          ADD TO CART
-                        </button>
-                      </>
-                    )}
+            {products
+              ?.filter((p) => p.donation == false)
+              .map((p) => (
+                <div key={p._id} className="col-md-4 col-sm-6 mb-4">
+                  <div className="card h-100">
+                    <img
+                      src={`https://wear2care.onrender.com/api/v1/product/product-photo/${p._id}`}
+                      className="card-img-top card_img"
+                      alt={p.name}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{p.name}</h5>
+                      <p className="card-text">
+                        {p.description.substring(0, 30)}
+                      </p>
+                      <p className="card-text">Rs. {p.price}</p>
+                      <button
+                        href="#"
+                        class="btn  btn-secondary ms-1"
+                        onClick={() => navigate(`/product/${p.slug}`)}
+                      >
+                        More Details
+                      </button>
+                      {auth.user && (
+                        <>
+                          <button
+                            href="#"
+                            class="btn btn-secondary ms-1"
+                            onClick={() => {
+                              setCart([...cart, p]);
+                              localStorage.setItem(
+                                cart,
+                                JSON.stringify([...cart, p])
+                              );
+                              toast.success("Item added");
+                            }}
+                          >
+                            ADD TO CART
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           <div className="m-2 p-3">
             {products && products.length < total && (

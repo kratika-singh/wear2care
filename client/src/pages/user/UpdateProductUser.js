@@ -8,107 +8,109 @@ import { useNavigate, useParams } from "react-router-dom";
 const { Option } = Select;
 
 const UpdateProductUser = () => {
-    const navigate = useNavigate();
-    const params = useParams();
-    const [categories, setCategories] = useState([]);
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [condition, setCondition] = useState("");
-    const [category, setCategory] = useState("");
-    const [brand, setBrand] = useState("");
-    const [size, setSize] = useState("");
-    const [donation, setDonation] = useState("");
-    const [photo, setPhoto] = useState("");
-    const [id, setId] = useState("");
+  const navigate = useNavigate();
+  const params = useParams();
+  const [categories, setCategories] = useState([]);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [condition, setCondition] = useState("");
+  const [category, setCategory] = useState("");
+  const [brand, setBrand] = useState("");
+  const [size, setSize] = useState("");
+  const [donation, setDonation] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [id, setId] = useState("");
 
-    const getSingleProduct = async () => {
-        try {
-          const { data } = await axios.get(
-            `/api/v1/product/get-product/${params.slug}`
-          );
-          setName(data.product.name);
-          setId(data.product._id);
-          setDescription(data.product.description);
-          setPrice(data.product.price);
-          setSize(data.product.size);
-          setCondition(data.product.condition);
-          setBrand(data.product.brand);
-          setCategory(data.product.category._id);
-          setDonation(data.product.donation)
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      useEffect(() => {
-        getSingleProduct();
-      }, []);
-    const getAllCategories = async () => {
-        try {
-          const { data } = await axios.get("/api/v1/category/get-category");
-          if (data?.success) {
-            setCategories(data?.category);
-          }
-        } catch (error) {
-          console.log(error);
-          toast.error("Something went wrong in getting categories");
-        }
-      };
-    
-      useEffect(() => {
-        getAllCategories();
-      }, []);
-    
-      // Create product function
-      const handleUpdate = async (e) => {
-        e.preventDefault();
-        try {
-          const productData = new FormData();
-          productData.append("name", name);
-          productData.append("description", description);
-          productData.append("price", price);
-          productData.append("brand", brand);
-          productData.append("size", size);
-          productData.append("condition", condition);
-          photo && productData.append("photo", photo);
-          productData.append("category", category);
-          productData.append("donation",donation)
-          const { data } = axios.put(
-            `/api/v1/product/update-product/${id}`,
-            productData
-          );
-          if (data?.success) {
-            toast.error(data?.message);
-          } else {
-            toast.success("Product Updated Successfully");
-            navigate("/dashboard/user/products-sold");
-          }
-        } catch (error) {
-          console.log(error);
-          toast.error("something went wrong");
-        }
-      };
-    
-      //delete a product
-      const handleDelete = async () => {
-        try {
-          let answer = window.prompt("Are You Sure want to delete this product ? ");
-          if (!answer) return;
-          const { data } = await axios.delete(
-            `/api/v1/product/delete-product/${id}`
-          );
-          toast.success("Product DEleted Succfully");
-          navigate("/dashboard/user/products-sold");
-        } catch (error) {
-          console.log(error);
-          toast.error("Something went wrong");
-        }
-      };
+  const getSingleProduct = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://wear2care.onrender.com/api/v1/product/get-product/${params.slug}`
+      );
+      setName(data.product.name);
+      setId(data.product._id);
+      setDescription(data.product.description);
+      setPrice(data.product.price);
+      setSize(data.product.size);
+      setCondition(data.product.condition);
+      setBrand(data.product.brand);
+      setCategory(data.product.category._id);
+      setDonation(data.product.donation);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
+  const getAllCategories = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://wear2care.onrender.com/api/v1/category/get-category"
+      );
+      if (data?.success) {
+        setCategories(data?.category);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong in getting categories");
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  // Create product function
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      const productData = new FormData();
+      productData.append("name", name);
+      productData.append("description", description);
+      productData.append("price", price);
+      productData.append("brand", brand);
+      productData.append("size", size);
+      productData.append("condition", condition);
+      photo && productData.append("photo", photo);
+      productData.append("category", category);
+      productData.append("donation", donation);
+      const { data } = axios.put(
+        `https://wear2care.onrender.com/api/v1/product/update-product/${id}`,
+        productData
+      );
+      if (data?.success) {
+        toast.error(data?.message);
+      } else {
+        toast.success("Product Updated Successfully");
+        navigate("/dashboard/user/products-sold");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("something went wrong");
+    }
+  };
+
+  //delete a product
+  const handleDelete = async () => {
+    try {
+      let answer = window.prompt("Are You Sure want to delete this product ? ");
+      if (!answer) return;
+      const { data } = await axios.delete(
+        `https://wear2care.onrender.com/api/v1/product/delete-product/${id}`
+      );
+      toast.success("Product DEleted Succfully");
+      navigate("/dashboard/user/products-sold");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
+  };
   return (
     <Layout title={"Dashboard - Sell Product"}>
       <div className="container-fluid m-3 p-3">
         <div className="row">
-        <div className="col-md-3">
+          <div className="col-md-3">
             <UserMenu />
           </div>
           <div className="col-md-9">
@@ -142,7 +144,7 @@ const UpdateProductUser = () => {
                 </label>
               </div>
               <div className="mb-3">
-              {photo ? (
+                {photo ? (
                   <div className="text-center">
                     <img
                       src={URL.createObjectURL(photo)}
@@ -154,7 +156,7 @@ const UpdateProductUser = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`/api/v1/product/product-photo/${id}`}
+                      src={`https://wear2care.onrender.com/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"
@@ -171,19 +173,10 @@ const UpdateProductUser = () => {
                 onChange={(value) => setCondition(value)}
                 value={condition}
               >
-                  <Option value="New With Tag">
-                    New With Tag
-                  </Option>
-                  <Option value="Like New">
-                    Like New
-                  </Option>
-                  <Option value="Good">
-                    Good
-                  </Option>
-                  <Option value="Used">
-                   Used
-                  </Option>
-
+                <Option value="New With Tag">New With Tag</Option>
+                <Option value="Like New">Like New</Option>
+                <Option value="Good">Good</Option>
+                <Option value="Used">Used</Option>
               </Select>
               <div className="mb-3">
                 <input
@@ -245,7 +238,7 @@ const UpdateProductUser = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default UpdateProductUser
+export default UpdateProductUser;

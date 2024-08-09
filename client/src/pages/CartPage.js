@@ -43,7 +43,9 @@ const CartPage = () => {
   //get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/braintree/token");
+      const { data } = await axios.get(
+        "https://wear2care.onrender.com/api/v1/product/braintree/token"
+      );
       setClientToken(data?.clientToken);
     } catch (error) {
       console.log(error);
@@ -54,25 +56,28 @@ const CartPage = () => {
   }, [auth?.token]);
 
   //handle payments
-    const handlePayment = async () => {
-      try {
-        setLoading(true);
-        const { nonce } = await instance.requestPaymentMethod();
-        const { data } = await axios.post("/api/v1/product/braintree/payment", {
+  const handlePayment = async () => {
+    try {
+      setLoading(true);
+      const { nonce } = await instance.requestPaymentMethod();
+      const { data } = await axios.post(
+        "https://wear2care.onrender.com/api/v1/product/braintree/payment",
+        {
           nonce,
           cart,
-        });    
-        setLoading(false);
-        localStorage.removeItem("cart");
-        setCart([]);
-        navigate("/dashboard/user/orders");
-        toast.success("Payment Completed Successfully");
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-    
+        }
+      );
+      setLoading(false);
+      localStorage.removeItem("cart");
+      setCart([]);
+      navigate("/dashboard/user/orders");
+      toast.success("Payment Completed Successfully");
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   return (
     <Layout>
       <div className="container">
@@ -96,7 +101,7 @@ const CartPage = () => {
               <div className="row mb-2 p-3 card flex-row">
                 <div className="col-md-4">
                   <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
+                    src={`https://wear2care.onrender.com/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                     width="350px"
