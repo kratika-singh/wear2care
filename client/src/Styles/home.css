@@ -82,6 +82,7 @@ font-size: 45px;
 }
 .container-genz .highlight{
   color: var(--title-color);
+  text-align: center;
   font-family: "Dancing Script", cursive;
 } 
 .products h1{
@@ -152,9 +153,15 @@ font-size: 45px;
 @media screen and (max-width: 576px) {
   .all-product .container-cat-fil{
     flex-direction: column;
+    width: 100!important;
   }
   .products .row{
     align-items: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .carousel-image{
+    height: 250px;
   }
 }
 /* product-details */
