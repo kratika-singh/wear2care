@@ -16,14 +16,13 @@ const Search = () => {
         <div className="text-center">
           <h1>Search Resuts</h1>
           <h6>
-            {values?.results.length < 1
-              ? "No Products Found"
-              : `Found ${values?.results.length}`}
-          </h6>
+          {values?.results.filter(p => p.donation === false).length < 1
+    ? "No Products Found"
+    : `Found ${values?.results.filter(p => p.donation === false).length}`}
+</h6>
+
           <div className="d-flex flex-wrap mt-4">
-            {values
-              ?.filter((p) => p.donation == false)
-              .results.map((p) => (
+            {values?.results.filter(p => p.donation == false).map((p) => (
                 <div key={p._id} className="col-md-4 col-sm-6 mb-4">
                   <div className="card h-100">
                     <img
