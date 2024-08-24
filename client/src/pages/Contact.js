@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <Layout title={"Contact us"}>
-      <section className="img-container1"></section>
+      <section className="img-container-1"></section>
       <section className="container-team">
         <h1>Meet Our team</h1>
         <div className="sub-container">
@@ -101,7 +101,7 @@ const Contact = () => {
                   <i className="fa-brands fa-instagram" />
                 </a>
                 <a
-                  href="https://github.com/Ishikacasley14"
+                  href="https://ishikacasley14.github.io/portfolio/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
