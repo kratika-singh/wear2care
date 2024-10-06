@@ -1,21 +1,26 @@
-# wear2care
+# Wear2Care 🌿👗
+<div align="center">
+  <img src="Screenshots/descjpg.jpg" alt="Wear2Care Overview" width="60%" height="200">
+</div>
 
-## Overview
-**wear2care** is a sustainable clothing website designed to connect users, buyers, and NGOs to promote the sustainable branding of clothes. Our platform allows users to donate clothing directly to NGOs or sell them to buyers, encouraging responsible consumption and recycling of fashion.
+## Overview 🌍
+**Wear2Care** is a sustainable clothing website designed to connect users, buyers, and NGOs to promote the sustainable branding of clothes. Our platform allows users to donate clothing directly to NGOs or sell them to buyers, encouraging responsible consumption and recycling of fashion. ♻️
 
-## Features
+🔗 [Visit Wear2Care](https://wear2care-5zk4.onrender.com/)
+
+## Features ✨
 - **User-Friendly Interface:** Seamlessly browse, donate, or buy sustainable clothing.
 - **NGO Integration:** Easily send clothing donations to partnered NGOs.
 - **Sustainable Branding:** Focused on promoting eco-friendly and sustainable fashion practices.
 
-## Tech Stack
+## Tech Stack 💻
 wear2care is built using the MERN stack:
 - **MongoDB:** Database to store user data, clothing items, and transactions.
 - **Express.js:** Backend framework for handling routes and server logic.
 - **React:** Frontend library for building dynamic and responsive user interfaces.
 - **Node.js:** Server environment to run the backend of the application.
 
-## Installation
+## Installation ⚙️
 
 To run the project locally, follow these steps:
 
@@ -38,11 +43,11 @@ To run the project locally, follow these steps:
 The application should now be running on http://localhost:3000.
 
 
-## Usage
+## Usage 🛍️
 - **For Users:** Sign up to donate your clothes or buy from others. Use the site to contribute to a sustainable clothing cycle and make eco-friendly choices.
 - **For NGOs:** Partner with us to receive clothing donations directly from our users. Contact us to get involved.
 
-## Contributing
+## Contributing  🤝
 We welcome contributions to make wear2care better. If you'd like to contribute, please follow these steps:
 
 1. Fork [this](https://github.com/kratika-singh/wear2care.git) repository and clone it
@@ -98,7 +103,7 @@ git push -u origin <your_branch_name>
 
 10. Add appropriate title and description to your pull request explaining your changes. Click on `Create Pull Request`
 
-## License
+## License  📄
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
